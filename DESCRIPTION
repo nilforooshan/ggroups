@@ -6,7 +6,7 @@ Author: Mohammad Ali Nilforooshan
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
 Description: Genetic group contributions to individuals in a pedigree
 License: GPL (>= 2)
-URL: https://github.com/nilforooshan/nilforooshan.github.io
+URL: https://github.com/nilforooshan/ggroups
 Encoding: UTF-8
 LazyData: true
 Imports: pedigreemm

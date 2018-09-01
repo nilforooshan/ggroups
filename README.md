@@ -18,7 +18,7 @@ Version 0.1.0
 ?Qgpu
 ```
 
-[PDF Manual](https://github.com/nilforooshan/nilforooshan.github.io)
+[PDF Manual](https://github.com/nilforooshan/ggroups/blob/master/man/ggroups.pdf)
 
 ## Description
 
