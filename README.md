@@ -4,11 +4,15 @@ Version 0.1.0
 
 ## Installation
 
-`library(devtools) && install_github('nilforooshan/ggroups')`
+```r
+devtools::install_github('nilforooshan/ggroups')
+```
 
 ## Requirement
 
-`# install.packages("pedigreemm")`
+```r
+require("pedigreemm")
+```
 
 ## Getting help
 

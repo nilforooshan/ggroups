@@ -18,6 +18,7 @@ uhatplus : Vector of \strong{Qĝ} + \strong{û}
 Add genetic group contributions to genetic merit of animals in a pedigree.
 }
 \examples{
+ped = data.frame(ID=c(1:2,4:7), SIRE=c(0,0,1,4,1,5), DAM=c(0,0,2,2,2,6))
 Qmat = qmat(ped)
 # For details about qmat and ped: ?qmat
 sol = data.frame(ID=c(1:2,4:7), EBV=c(0.2,seq(-0.1,0.3,0.1)))
