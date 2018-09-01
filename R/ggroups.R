@@ -1,0 +1,30 @@
+#' @title Genetic Group Contribution
+#'
+#' @docType package
+#'
+#' @author Mohammad Ali Nilforooshan \email{m.a.nilforooshan@gmail.com}
+#'
+#' @name ggroups
+#'
+#' @description
+#' This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree,
+#' and adding genetic group contributions to genetic merit of animals in a pedigree.
+#'
+#' @details
+#' The concept of genetic groups or phantom parent groups is based on the fact that unknown parents do not belong to the same base population and they might come from different genetic levels.
+#' With \strong{Q}, \strong{ĝ}, and \strong{û} being the matrix of genetic group contributions to individuals in the pedigree,
+#' the vector of predicted additive genetic merit of animals, and the vector of predicted genetic group effects, respectively,
+#' the contribution of genetic groups should be added to the predicted genetic merit of animals (\strong{Qĝ} + \strong{û}).
+#'
+#' Forming Mixed Model Equations corresponding to the model, \strong{û} and \strong{ĝ} are predicted (Quaas, 1988: Eq. [3]).
+#' However, using Quaas and Pollak (1981) transformation, \strong{Qĝ} + \strong{û} can be obtained directly (Quaas, 1988: Eq. [4]).
+#'
+#' Some solver packages obtain \strong{Qĝ} + \strong{û} directly, some not.
+#' The aim of this package is to find the genetic contribution of each genetic group on each individual in the pedigree (matrix \strong{Q}),
+#' and also calculating \strong{Qĝ} + \strong{û}, given the pedigree and a vector of [\strong{ĝ}, \strong{û}].
+#'
+#' @references
+#' Quaas, R. L. 1988. Additive Genetic Model with Groups and Relationships. J. Dairy Sci., 71:1338-1345.
+#'
+#' Quaas, R. L., and E. J. Pollak. 1981. Modified equations for sire models with groups. J. Dairy Sci., 64:1868-1872.
+NULL
