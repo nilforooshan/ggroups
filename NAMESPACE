@@ -3,5 +3,3 @@
 export(Qgpu)
 export(gghead)
 export(qmat)
-export(sampleped)
-export(samplesol)

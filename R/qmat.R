@@ -7,7 +7,9 @@
 #' @return Qmat : Matrix \strong{Q}
 #'
 #' @examples
-#' qmat(gghead(sampleped))
+#' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
+#' ped2 = gghead(ped)
+#' qmat(ped2)
 #'
 #' @export
 qmat = function(ped2) {

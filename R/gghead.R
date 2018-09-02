@@ -7,7 +7,8 @@
 #' @return ped2 : A processed pedigree \code{data.frame}
 #'
 #' @examples
-#' gghead(sampleped)
+#' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
+#' gghead(ped)
 #'
 #' @details
 #' Consider this simple pedigree:
@@ -32,7 +33,7 @@
 #'
 #' 5 1 2
 #'
-#' This pedigree is provided as a sample data (\code{sampleped}) by the package, with columns corresponding to ID, SIRE, DAM.
+#' This pedigree is used as an example.
 #'
 #' @export
 gghead = function(ped) {
