@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 0.1.0
+Version 0.1.1
 
 ## Installation
 
@@ -39,45 +39,40 @@ Some solver packages obtain **Qĝ** + **û** directly, some not. The aim of this
 Consider this simple pedigree:
 
 ```
-4 0 0
-5 4 0
-6 0 0
-7 5 6
+3 0 0
+4 3 0
+6 4 5
+5 0 0
 ```
 
-First, unknown parents are replaced with the corresponding genetic groups.
+First, unknown parents are replaced with the corresponding genetic groups.  
+Please note that unknown parent IDs should be smaller than animal IDs.
 
 ```
-4 1 2
-5 4 2
-6 1 2
-7 5 6
+3 1 2
+4 3 2
+6 4 5
+5 1 2
 ```
 
-Then, rows corresponding to genetic groups are added to the head of the pedigree.
+This pedigree is provided as a sample data (`sampleped`) by the package, with columns corresponding to ID, SIRE, DAM.  
+A sample data for solutions is provided (`samplesol`) by the package, with columns corresponding to ID, EBV ([**ĝ**, **û**]).  
+`sampleped` and `samplesol` are used in the examples.
 
-```
-1 0 0
-2 0 0
-4 1 2
-5 4 2
-6 1 2
-7 5 6
-```
-
-This pedigree is used as a `data.frame` to obtain matrix **Q**.
+Perform pedigree checks, add genetic groups to the pedigree and sort it:
 
 ```r
-ped = data.frame(ID=c(1:2,4:7), SIRE=c(0,0,1,4,1,5), DAM=c(0,0,2,2,2,6))
-qmat(ped)
+gghead(sampleped)
 ```
 
-Assuming `sol` being a `data.frame` with 2 numeric columns corresponding to ID, EBV ([**ĝ**, **û**]), the vextor of **Qĝ** + **û** is obtained by:
+Obtain matrix **Q**:
 
 ```r
-Qmat = qmat(ped)
-sol = data.frame(ID=c(1:2,4:7), EBV=c(0.2,seq(-0.1,0.3,0.1)))
-Qgpu(Qmat, sol)
-# OR
-Qgpu(qmat(ped), sol)
+qmat(gghead(sampleped))
+```
+
+Obtain vextor **Qĝ** + **û**:
+
+```r
+Qgpu(qmat(gghead(sampleped)), samplesol)
 ```

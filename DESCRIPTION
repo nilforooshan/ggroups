@@ -1,10 +1,10 @@
 Package: ggroups
 Type: Package
 Title: Genetic group contributions
-Version: 0.1.0
+Version: 0.1.1
 Author: Mohammad Ali Nilforooshan
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
-Description: Genetic group contributions to individuals in a pedigree
+Description: Genetic group contributions to individuals in a pedigree.
 License: GPL (>= 2)
 URL: https://github.com/nilforooshan/ggroups
 Encoding: UTF-8
@@ -12,5 +12,4 @@ LazyData: true
 Imports: pedigreemm
 RoxygenNote: 6.1.0
 Repository: GitHub
-Date: 2018-09-01
 Installation: devtools::install_github('nilforooshan/ggroups')

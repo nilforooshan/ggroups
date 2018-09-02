@@ -4,10 +4,10 @@
 \alias{qmat}
 \title{Create matrix \strong{Q}}
 \usage{
-qmat(ped)
+qmat(ped2)
 }
 \arguments{
-\item{ped}{: A \code{data.frame} with 3 integer columns corresponding to ID, SIRE, DAM}
+\item{ped2}{: The output of \code{gghead}; for more details: \code{?gghead}}
 }
 \value{
 Qmat : Matrix \strong{Q}
@@ -15,47 +15,7 @@ Qmat : Matrix \strong{Q}
 \description{
 Creates the genetic group contribution matrix.
 }
-\details{
-Individuals are sorted numerically, with parent IDs smaller than progeny ID. Only genetic groups should have unknown parents, denoted as 0.
-
-Consider this simple pedigree:
-
-\code{4 0 0}
-
-\code{5 4 0}
-
-\code{6 0 0}
-
-\code{7 5 6}
-
-First, unknown parents are replaced with the corresponding genetic groups.
-
-\code{4 1 2}
-
-\code{5 4 2}
-
-\code{6 1 2}
-
-\code{7 5 6}
-
-Then, rows corresponding to genetic groups are added to the head of the pedigree.
-
-\code{1 0 0}
-
-\code{2 0 0}
-
-\code{4 1 2}
-
-\code{5 4 2}
-
-\code{6 1 2}
-
-\code{7 5 6}
-
-This pedigree is used as a \code{data.frame}. See the example.
-}
 \examples{
-ped = data.frame(ID=c(1:2,4:7), SIRE=c(0,0,1,4,1,5), DAM=c(0,0,2,2,2,6))
-qmat(ped)
+qmat(gghead(sampleped))
 
 }
