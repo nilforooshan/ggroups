@@ -2,14 +2,14 @@
 % Please edit documentation in R/Qgpu.R
 \name{Qgpu}
 \alias{Qgpu}
-\title{\strong{Qg} + \strong{u}}
+\title{Vector \strong{Qg} + \strong{u}}
 \usage{
-Qgpu(Qmat, sol)
+Qgpu(Q, sol)
 }
 \arguments{
-\item{Qmat}{: The output matrix from \code{qmat}; for more details: \code{?qmat}}
+\item{Q}{: The output matrix from \code{qmat}; for more details: \code{?qmat}}
 
-\item{sol}{: A \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).}
+\item{sol}{: A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).}
 }
 \value{
 uhatplus : Vector of \strong{Qĝ} + \strong{û}
@@ -19,10 +19,10 @@ Adds genetic group contributions to genetic merit of animals in a pedigree.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
-Qmat = qmat(gghead(ped))
+Q = qmat(gghead(ped))
 ghat = c(0.1, -0.1)
 uhat = seq(-0.15, 0.15, 0.1)
 sol = data.frame(ID=1:6, EBV=c(ghat, uhat))
-Qgpu(Qmat, sol)
+Qgpu(Q, sol)
 
 }

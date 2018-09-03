@@ -2,7 +2,7 @@
 #'
 #' @description Does specific pedigree checks; adds genetic groups to the head of the pedigree and sorts it.
 #'
-#' @param ped : A \code{data.frame} with 3 integer columns corresponding to ID, SIRE, DAM
+#' @param ped : A \code{data.frame} with integer columns corresponding to ID, SIRE, DAM
 #'
 #' @return ped2 : A processed pedigree \code{data.frame}
 #'

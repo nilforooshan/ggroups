@@ -6,7 +6,7 @@
 \title{Genetic Group Contribution}
 \description{
 This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree,
-and adding genetic group contributions to genetic merit of animals in a pedigree.
+and adding genetic group contributions to genetic merit of animals in a pedigree. It also calculates the genetic relationship matrix \strong{A} from the pedigree.
 }
 \details{
 The concept of genetic groups or phantom parent groups is based on the fact that unknown parents do not belong to the same base population and they might come from different genetic levels.

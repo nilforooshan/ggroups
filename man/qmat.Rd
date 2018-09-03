@@ -2,7 +2,7 @@
 % Please edit documentation in R/qmat.R
 \name{qmat}
 \alias{qmat}
-\title{Create matrix \strong{Q}}
+\title{Matrix \strong{Q}}
 \usage{
 qmat(ped2)
 }
@@ -10,7 +10,7 @@ qmat(ped2)
 \item{ped2}{: The output of \code{gghead}; for more details: \code{?gghead}}
 }
 \value{
-Qmat : Matrix \strong{Q}
+Q : Matrix \strong{Q}
 }
 \description{
 Creates the genetic group contribution matrix.

@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 0.1.1
+Version 0.1.2
 
 ## Installation
 
@@ -12,6 +12,7 @@ devtools::install_github('nilforooshan/ggroups')
 
 ```r
 ?ggroups
+?buildA
 ?gghead
 ?qmat
 ?Qgpu
@@ -21,7 +22,7 @@ devtools::install_github('nilforooshan/ggroups')
 
 ## Description
 
-This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree, and adding genetic group contributions to genetic merit of animals in a pedigree.
+This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree, and adding genetic group contributions to genetic merit of animals in a pedigree.  It also calculates the genetic relationship matrix **A** from the pedigree.
 
 ## Details
 
@@ -87,4 +88,11 @@ Obtain vextor **Qĝ** + **û**:
 
 ```r
 Qgpu(qmat(gghead(ped)), sol)
+```
+
+To build an additive genetic relationship matrix (**A**) from a pedigree:
+
+```r
+ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
+buildA(ped)
 ```
