@@ -8,6 +8,13 @@ Version 0.1.2
 devtools::install_github('nilforooshan/ggroups')
 ```
 
+Alternatively:
+
+```r
+download.file("https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.2.tar.gz", destfile="ggroups_0.1.2.tar.gz")
+install.packages("ggroups_0.1.2.tar.gz", repos=NULL, type="source")
+```
+
 ## Getting help
 
 ```r
