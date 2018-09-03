@@ -11,7 +11,7 @@ devtools::install_github('nilforooshan/ggroups')
 ## Getting help
 
 ```r
-?ggroups
+?`ggroups-package`
 ?buildA
 ?gghead
 ?qmat
