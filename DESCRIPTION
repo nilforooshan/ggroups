@@ -14,6 +14,7 @@ Repository: GitHub
 Installation:
    devtools::install_github('nilforooshan/ggroups')
    Alternatively:
-   download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.2.tar.gz', destfile='ggroups_0.1.2.tar.gz')
-   install.packages('ggroups_0.1.2.tar.gz', repos=NULL, type='source')
+   installer = file.path(tempdir(), 'ggroups_0.1.2.tar.gz')
+   download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.2.tar.gz', destfile=installer)
+   install.packages(installer, repos=NULL, type='source')
 Authors@R: person("Mohammad Ali", "Nilforooshan", email="m.a.nilforooshan@gmail.com", role = c("aut", "cre"))
