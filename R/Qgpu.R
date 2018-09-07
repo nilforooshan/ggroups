@@ -1,5 +1,3 @@
-#' @name Qgpu
-#'
 #' @title Vector \strong{Qg} + \strong{u}
 #'
 #' @description Adds genetic group contributions to genetic merit of animals in a pedigree.

@@ -1,5 +1,3 @@
-#' @name qmat
-#'
 #' @title Matrix \strong{Q}
 #'
 #' @description Creates a genetic group contribution matrix.

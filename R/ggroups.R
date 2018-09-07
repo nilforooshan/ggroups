@@ -1,8 +1,8 @@
-#' @name ggroups-package
-#'
 #' @title Genetic Group Contribution
 #'
 #' @docType package
+#'
+#' @name ggroups-package
 #'
 #' @author Mohammad Ali Nilforooshan \email{m.a.nilforooshan@gmail.com}
 #'

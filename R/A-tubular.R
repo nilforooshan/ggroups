@@ -1,5 +1,3 @@
-#' @name buildA
-#'
 #' @title Relationship matrix \strong{A}
 #'
 #' @description Creates the pedigree-based additive genetic relationship matrix.
@@ -33,8 +31,7 @@ buildA = function(ped) {
             if(j==i) A[i,j] = 1 + s_d/2
          }
       }
+      A[,i] = A[i,]
    }
-   A = A + t(A)
-   diag(A) = diag(A)/2
    return(A)
 }

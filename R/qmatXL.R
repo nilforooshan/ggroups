@@ -1,5 +1,3 @@
-#' @name qmatXL
-#'
 #' @title Matrix \strong{Q} for large pedigrees
 #'
 #' @description Creates a genetic group contribution matrix for large pedigrees.
@@ -60,7 +58,7 @@ peddown = function(ped2, indv) {
    newped = newped[order(newped$ID),]
    return(newped)
 }
-#'  @title Row 1 of matrix \strong{A}
+#' @title Row 1 of matrix \strong{A}
 #'
 #' @description Calculates the 1st row of a genetic relationship matrix.
 #'
