@@ -13,7 +13,7 @@ qmat(ped2)
 Q : Matrix \strong{Q}
 }
 \description{
-Creates the genetic group contribution matrix.
+Creates a genetic group contribution matrix.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 0.1.2
+Version 0.1.3
 
 ## Installation
 
@@ -16,6 +16,12 @@ download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_re
 install.packages(installer, repos=NULL, type='source')
 ```
 
+**To find out the package version installed:**
+
+```r
+packageVersion("ggroups")
+```
+
 ## Getting help
 
 ```r
@@ -23,6 +29,7 @@ install.packages(installer, repos=NULL, type='source')
 ?buildA
 ?gghead
 ?qmat
+?qmatXL
 ?Qgpu
 ```
 
@@ -82,6 +89,12 @@ Obtain matrix **Q**:
 
 ```r
 qmat(gghead(ped))
+```
+
+For large pedigrees, `qmat` would require a lot of memory and time, which might not be possible for ordinary computers. The function `qmatXL` takes less RAM and time.
+
+```r
+qmatXL(gghead(ped))
 ```
 
 Assume the following `data.frame` for solutions, with columns corresponding to ID, EBV ([**ĝ**, **û**]):

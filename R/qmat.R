@@ -1,6 +1,8 @@
+#' @name qmat
+#'
 #' @title Matrix \strong{Q}
 #'
-#' @description Creates the genetic group contribution matrix.
+#' @description Creates a genetic group contribution matrix.
 #'
 #' @param ped2 : The output of \code{gghead}; for more details: \code{?gghead}
 #'

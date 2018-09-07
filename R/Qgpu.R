@@ -1,11 +1,11 @@
+#' @name Qgpu
+#'
 #' @title Vector \strong{Qg} + \strong{u}
 #'
 #' @description Adds genetic group contributions to genetic merit of animals in a pedigree.
 #'
 #' @param
 #' Q : The output matrix from \code{qmat}; for more details: \code{?qmat}
-#'
-#' @param
 #' sol : A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).
 #'
 #' @return uhatplus : Vector of \strong{Qĝ} + \strong{û}

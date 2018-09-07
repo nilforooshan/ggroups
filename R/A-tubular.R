@@ -1,3 +1,5 @@
+#' @name buildA
+#'
 #' @title Relationship matrix \strong{A}
 #'
 #' @description Creates the pedigree-based additive genetic relationship matrix.

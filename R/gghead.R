@@ -1,3 +1,5 @@
+#' @name gghead
+#'
 #' @title Pedigree processing
 #'
 #' @description Does specific pedigree checks; adds genetic groups to the head of the pedigree and sorts it.

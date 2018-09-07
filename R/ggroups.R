@@ -1,10 +1,10 @@
+#' @name ggroups-package
+#'
 #' @title Genetic Group Contribution
 #'
 #' @docType package
 #'
 #' @author Mohammad Ali Nilforooshan \email{m.a.nilforooshan@gmail.com}
-#'
-#' @name ggroups-package
 #'
 #' @description
 #' This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree,

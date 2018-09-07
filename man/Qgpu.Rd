@@ -7,9 +7,8 @@
 Qgpu(Q, sol)
 }
 \arguments{
-\item{Q}{: The output matrix from \code{qmat}; for more details: \code{?qmat}}
-
-\item{sol}{: A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).}
+\item{Q}{: The output matrix from \code{qmat}; for more details: \code{?qmat}
+sol : A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).}
 }
 \value{
 uhatplus : Vector of \strong{Qĝ} + \strong{û}
