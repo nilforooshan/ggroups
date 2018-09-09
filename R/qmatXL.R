@@ -38,10 +38,13 @@ qmatXL = function(ped2) {
 #'
 #' @param
 #' ped2 : The output of \code{gghead}; for more details: \code{?gghead}
+#'
+#' @param
 #' indv : An integer ID of an ancestor
 #'
 #' @return newped : An extracted pedigree \code{data.frame} with columns corresponding to ID, SIRE, DAM.
 #'
+#' @noRd
 peddown = function(ped2, indv) {
    oldped = data.frame()
    newped = data.frame(ID=indv, SIRE=0, DAM=0)
@@ -67,6 +70,7 @@ peddown = function(ped2, indv) {
 #'
 #' @return A.row1 : Genetic relationships with an ancestor; a \code{data.frame} with columns corresponding to ID, rg.
 #'
+#' @noRd
 Arow1 = function(ped3) {
    ped3$rg = 0
    ped3[1,]$rg = 1

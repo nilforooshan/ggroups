@@ -4,6 +4,8 @@
 #'
 #' @param
 #' Q : The output matrix from \code{qmat}; for more details: \code{?qmat}
+#'
+#' @param
 #' sol : A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).
 #'
 #' @return uhatplus : Vector of \strong{Qĝ} + \strong{û}
