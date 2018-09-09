@@ -2,7 +2,7 @@
 % Please edit documentation in R/qmatXL.R
 \name{Arow1}
 \alias{Arow1}
-\title{@title Row 1 of matrix \strong{A}}
+\title{Row 1 of matrix \strong{A}}
 \usage{
 Arow1(ped3)
 }

@@ -1,7 +1,7 @@
 Package: ggroups
 Type: Package
 Title: Genetic Group Contributions
-Version: 0.1.3
+Version: 0.1.4
 Author: Mohammad Ali Nilforooshan
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
 Description: Genetic group contributions to individuals in a pedigree.

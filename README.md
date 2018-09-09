@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 0.1.3
+Version 0.1.4
 
 ## Installation
 
@@ -22,10 +22,17 @@ install.packages(installer, repos=NULL, type='source')
 packageVersion("ggroups")
 ```
 
+**To find out the latest package version in the repository:**
+
+```r
+latest.v()
+```
+
 ## Getting help
 
 ```r
 ?`ggroups-package`
+?latest.v
 ?buildA
 ?gghead
 ?qmat

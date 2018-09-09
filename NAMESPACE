@@ -3,5 +3,6 @@
 export(Qgpu)
 export(buildA)
 export(gghead)
+export(latest.v)
 export(qmat)
 export(qmatXL)
