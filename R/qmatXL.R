@@ -36,11 +36,9 @@ qmatXL = function(ped2) {
 #'
 #' @description Extracts pedigree from an ancestor.
 #'
-#' @param
-#' ped2 : The output of \code{gghead}; for more details: \code{?gghead}
+#' @param ped2 : The output of \code{gghead}; for more details: \code{?gghead}
 #'
-#' @param
-#' indv : An integer ID of an ancestor
+#' @param indv : An integer ID of an ancestor
 #'
 #' @return newped : An extracted pedigree \code{data.frame} with columns corresponding to ID, SIRE, DAM.
 #'
