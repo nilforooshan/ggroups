@@ -1,7 +1,7 @@
 Package: ggroups
 Type: Package
 Title: Genetic Group Contributions
-Version: 0.1.4
+Version: 0.1.5
 Author: Mohammad Ali Nilforooshan
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
 Description: Genetic group contributions to individuals in a pedigree.
@@ -14,7 +14,7 @@ Repository: GitHub
 Installation:
    devtools::install_github('nilforooshan/ggroups')
    Alternatively:
-   installer = file.path(tempdir(), 'ggroups_0.1.4.tar.gz')
-   download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.4.tar.gz', destfile=installer)
+   installer = file.path(tempdir(), 'ggroups_0.1.5.tar.gz')
+   download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.5.tar.gz', destfile=installer)
    install.packages(installer, repos=NULL, type='source')
 Authors@R: person("Mohammad Ali", "Nilforooshan", email="m.a.nilforooshan@gmail.com", role = c("aut", "cre"))

@@ -23,6 +23,8 @@
 #' The aim of this package is to find the genetic contribution of each genetic group on each individual in the pedigree (matrix \strong{Q}),
 #' and also calculating \strong{Qĝ} + \strong{û}, given the pedigree and a vector of [\strong{ĝ}, \strong{û}].
 #'
+#' Overlap between sire and dam genetic groups is supported.
+#'
 #' @references
 #' Quaas, R. L. 1988. Additive Genetic Model with Groups and Relationships. J. Dairy Sci., 71:1338-1345.
 #'

@@ -18,6 +18,7 @@
 #'
 #' @export
 qmatXL = function(ped2) {
+   ped2 = unique(ped2)
    Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
    print(paste("Found", Ngg, "genetic groups"))
    ggID = ped2[1:Ngg,]$ID

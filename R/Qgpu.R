@@ -18,6 +18,7 @@
 #'
 #' @export
 Qgpu = function(Q, sol) {
+   sol = unique(sol)
    if(identical(as.integer(c(colnames(Q), rownames(Q))), sol$ID))
    {
       Ngg = ncol(Q)

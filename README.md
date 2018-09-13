@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 0.1.4
+Version 0.1.5
 
 ## Installation
 
@@ -11,8 +11,8 @@ devtools::install_github('nilforooshan/ggroups')
 Alternatively:
 
 ```r
-installer = file.path(tempdir(), 'ggroups_0.1.4.tar.gz')
-download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.4.tar.gz', destfile=installer)
+installer = file.path(tempdir(), 'ggroups_0.1.5.tar.gz')
+download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.5.tar.gz', destfile=installer)
 install.packages(installer, repos=NULL, type='source')
 ```
 
@@ -57,7 +57,8 @@ However, using Quaas and Pollak (1981) transformation, **Qĝ** + **û** can be o
 
 ![QuassEq4](https://raw.githubusercontent.com/nilforooshan/Link-resources/master/link_resources/Quaas4.gif)
 
-Some solver packages obtain **Qĝ** + **û** directly, some not. The aim of this package is to find the genetic contribution of each genetic group on each individual in the pedigree (matrix **Q**), and also calculating **Qĝ** + **û**, given the pedigree and a vector of [**ĝ**, **û**].
+Some solver packages obtain **Qĝ** + **û** directly, some not. The aim of this package is to find the genetic contribution of each genetic group on each individual in the pedigree (matrix **Q**), and also calculating **Qĝ** + **û**, given the pedigree and a vector of [**ĝ**, **û**].  
+Overlap between sire and dam genetic groups is supported.
 
 ## Usage
 
