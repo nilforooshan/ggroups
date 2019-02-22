@@ -2,18 +2,18 @@
 % Please edit documentation in R/gghead.R
 \name{gghead}
 \alias{gghead}
-\title{Pedigree processing}
+\title{Append genetic groups to the pedigree}
 \usage{
 gghead(ped)
 }
 \arguments{
-\item{ped}{: A \code{data.frame} with integer columns corresponding to ID, SIRE, DAM}
+\item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 }
 \value{
-ped2 : A processed pedigree \code{data.frame}
+Processed pedigree \code{data.frame}
 }
 \description{
-Does specific pedigree checks; adds genetic groups to the head of the pedigree and sorts it.
+Appends genetic groups to the head of the pedigree and sorts it.
 }
 \details{
 Consider this simple pedigree:
@@ -38,7 +38,7 @@ Please note that unknown parent IDs should be smaller than animal IDs.
 
 5 1 2
 
-This pedigree is used as an example.
+Then, \code{gghead} is applied to this pedigree (see the example).
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

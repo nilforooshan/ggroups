@@ -7,15 +7,15 @@
 Qgpu(Q, sol)
 }
 \arguments{
-\item{Q}{: The output matrix from \code{qmat}; for more details: \code{?qmat}}
+\item{Q}{: The output matrix from \code{qmat} (for more details: \code{?qmat})}
 
-\item{sol}{: A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).}
+\item{sol}{: \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]), where \strong{ĝ} and \strong{û} are the genetic group and genetic merit solutions, respectively.}
 }
 \value{
-uhatplus : Vector of \strong{Qĝ} + \strong{û}
+Vector of \strong{Qĝ} + \strong{û}
 }
 \description{
-Adds genetic group contributions to genetic merit of animals in a pedigree.
+Adds genetic group contributions to the genetic merit of animals.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

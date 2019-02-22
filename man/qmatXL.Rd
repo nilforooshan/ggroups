@@ -2,27 +2,27 @@
 % Please edit documentation in R/qmatXL.R
 \name{qmatXL}
 \alias{qmatXL}
-\title{Matrix \strong{Q} for large pedigrees}
+\title{Matrix \strong{Q} for large pedigrees (parallel processing)}
 \usage{
-qmatXL(ped2)
+qmatXL(ped2, ncl)
 }
 \arguments{
-\item{ped2}{: The output of \code{gghead}; for more details: \code{?gghead}}
+\item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
+
+\item{ncl}{: User defined number of nodes; if the number of nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.}
 }
 \value{
-Q : Matrix \strong{Q}
+Matrix \strong{Q}
 }
 \description{
-Creates a genetic group contribution matrix for large pedigrees.
+Creates the genetic group contribution matrix for large pedigrees, with parallel processing.
 }
 \details{
-Calculation of a genetic group contribution matrix for large pedigrees requires a lot of memory and time.
-This might not be possible on ordinary computers, using the function \code{qmat}.
-The function \code{qmatXL} takes less RAM and time, making the calculation possible on ordinary computers.
+This function is the parallel version of \code{qmatL}. It requires \code{foreach} and \code{doParallel} packages.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
 ped2 = gghead(ped)
-qmatXL(ped2)
+qmatXL(ped2, 2)
 
 }

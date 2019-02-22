@@ -1,4 +1,4 @@
-#' @title Genetic Group Contribution
+#' @title Pedigree and genetic groups
 #'
 #' @docType package
 #'
@@ -7,26 +7,11 @@
 #' @author Mohammad Ali Nilforooshan \email{m.a.nilforooshan@gmail.com}
 #'
 #' @description
-#' This package contains functions related to calculating the matrix of genetic group contributions to individuals in a pedigree,
-#' and adding genetic group contributions to genetic merit of animals in a pedigree. It also calculates the genetic relationship matrix \strong{A} from the pedigree.
+#' This package contains pedigree processing and analyzing functions, including functions for checking and renumbering the pedigree, making the pedigree relationship matrix and its inverse, in matrix and tubular formats, as well as functions related to genetic groups.
 #'
 #' @details
-#' The concept of genetic groups or phantom parent groups is based on the fact that unknown parents do not belong to the same base population and they might come from different genetic levels.
-#' With \strong{Q}, \strong{ĝ}, and \strong{û} being the matrix of genetic group contributions to individuals in the pedigree,
-#' the vector of predicted additive genetic merit of animals, and the vector of predicted genetic group effects, respectively,
-#' the contribution of genetic groups should be added to the predicted genetic merit of animals (\strong{Qĝ} + \strong{û}).
-#'
-#' Forming Mixed Model Equations corresponding to the model, \strong{û} and \strong{ĝ} are predicted (Quaas, 1988: Eq. [3]).
-#' However, using Quaas and Pollak (1981) transformation, \strong{Qĝ} + \strong{û} can be obtained directly (Quaas, 1988: Eq. [4]).
-#'
-#' Some solver packages obtain \strong{Qĝ} + \strong{û} directly, some not.
-#' The aim of this package is to find the genetic contribution of each genetic group on each individual in the pedigree (matrix \strong{Q}),
-#' and also calculating \strong{Qĝ} + \strong{û}, given the pedigree and a vector of [\strong{ĝ}, \strong{û}].
-#'
-#' Overlap between sire and dam genetic groups is supported.
+#' First, it is recommended to check the pedigree \code{data.frame} with the \code{pedcheck} function. Pedigree relationship matrix and its inverse are fundamentals in the conventional and modern animal breeding. The concept of genetic groups stems from the fact that not all the unknown parents are of the same genetic level. The genetic group contribution matrix (\strong{Q}) is required to weight and add genetic group effects (\strong{ĝ}) to the genetic merit of animals (\strong{û}), which is equal to \strong{Qĝ} + \strong{û} (Quaas, 1988). Calculating \strong{Q} is computationally challenging, and for large pedigree, large RAM and long computational time is required. Therefore, the functions \code{qmatL} and its parallel version, \code{qmatXL} are introduced. Overlap between sire and dam genetic groups is supported.
 #'
 #' @references
-#' Quaas, R. L. 1988. Additive Genetic Model with Groups and Relationships. J. Dairy Sci., 71:1338-1345.
-#'
-#' Quaas, R. L., and E. J. Pollak. 1981. Modified equations for sire models with groups. J. Dairy Sci., 64:1868-1872.
+#' Quaas, R. L. 1988. Additive Genetic Model with Groups and Relationships. J. Dairy Sci., 71:1338-1345. <doi:10.3168.jds.S0022-0302(88)79691-5>
 NULL

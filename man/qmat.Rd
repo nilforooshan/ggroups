@@ -7,13 +7,13 @@
 qmat(ped2)
 }
 \arguments{
-\item{ped2}{: The output of \code{gghead}; for more details: \code{?gghead}}
+\item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
 }
 \value{
-Q : Matrix \strong{Q}
+Matrix \strong{Q}
 }
 \description{
-Creates a genetic group contribution matrix.
+Creates the genetic group contribution matrix.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

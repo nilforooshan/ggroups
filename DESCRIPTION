@@ -1,20 +1,17 @@
 Package: ggroups
-Type: Package
-Title: Genetic Group Contributions
-Version: 0.1.5
+Title: Pedigree and genetic groups
+Version: 1.0.0
+Date: 2019-02-22
+Authors@R: person("Mohammad Ali", "Nilforooshan", email="m.a.nilforooshan@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-0339-5442"))
 Author: Mohammad Ali Nilforooshan
 Maintainer: Mohammad Ali Nilforooshan <m.a.nilforooshan@gmail.com>
-Description: Genetic group contributions to individuals in a pedigree.
+Description: Pedigree-related functions including genetic groups
 License: GPL-3
-URL: https://github.com/nilforooshan/ggroups
-Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0
+Suggests:
+   doParallel (>= 1.0.14)
+RoxygenNote: 6.1.1
+URL: https://github.com/nilforooshan/ggroups
+BugReports: https://github.com/nilforooshan/ggroups/issues
+Encoding: UTF-8
 Repository: GitHub
-Installation:
-   devtools::install_github('nilforooshan/ggroups')
-   Alternatively:
-   installer = file.path(tempdir(), 'ggroups_0.1.5.tar.gz')
-   download.file('https://github.com/nilforooshan/Link-resources/raw/master/link_resources/ggroups_0.1.5.tar.gz', destfile=installer)
-   install.packages(installer, repos=NULL, type='source')
-Authors@R: person("Mohammad Ali", "Nilforooshan", email="m.a.nilforooshan@gmail.com", role = c("aut", "cre"))

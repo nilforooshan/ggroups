@@ -1,12 +1,12 @@
 #' @title Vector \strong{Qg} + \strong{u}
 #'
-#' @description Adds genetic group contributions to genetic merit of animals in a pedigree.
+#' @description Adds genetic group contributions to the genetic merit of animals.
 #'
-#' @param Q : The output matrix from \code{qmat}; for more details: \code{?qmat}
+#' @param Q : The output matrix from \code{qmat} (for more details: \code{?qmat})
 #'
-#' @param sol : A \code{data.frame} with numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]).
+#' @param sol : \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]), where \strong{ĝ} and \strong{û} are the genetic group and genetic merit solutions, respectively.
 #'
-#' @return uhatplus : Vector of \strong{Qĝ} + \strong{û}
+#' @return Vector of \strong{Qĝ} + \strong{û}
 #'
 #' @examples
 #' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
@@ -18,7 +18,6 @@
 #'
 #' @export
 Qgpu = function(Q, sol) {
-   sol = unique(sol)
    if(identical(as.integer(c(colnames(Q), rownames(Q))), sol$ID))
    {
       Ngg = ncol(Q)
