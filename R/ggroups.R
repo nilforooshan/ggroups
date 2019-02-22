@@ -1,4 +1,4 @@
-#' @title Pedigree and genetic groups
+#' @title Pedigree and Genetic Groups
 #'
 #' @docType package
 #'

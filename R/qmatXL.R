@@ -16,7 +16,7 @@
 #' ped2 = gghead(ped)
 #' qmatXL(ped2, 2)
 #'
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("i", "%dopar%", "foreach"))
+if(getRversion() >= "2.15.1")  utils::globalVariables(c("i", "%dopar%", "foreach", "stopCluster"))
 #' @export
 qmatXL = function(ped2, ncl) {
    if(ncl > 1)
@@ -72,6 +72,7 @@ qmatXL = function(ped2, ncl) {
             for(j in 1:nrow(A.row1)) Qc[as.character(A.row1[j,]$ID),] = A.row1[j,]$rg
             Qc
          }
+         stopCluster(cl)
          return(Q)
       } else {
          print("Package doParallel needed for this function to work. Please install it.")
