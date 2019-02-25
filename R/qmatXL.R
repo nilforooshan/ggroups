@@ -16,15 +16,13 @@
 #' ped2 = gghead(ped)
 #' qmatXL(ped2, 2)
 #'
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("i", "%dopar%", "foreach", "stopCluster"))
+if(getRversion() >= "2.15.1")  utils::globalVariables("i")
 #' @export
 qmatXL = function(ped2, ncl) {
    if(ncl > 1)
    {
-      if(requireNamespace("doParallel"))
-      # doParallel is only required in this function.
+      if(requireNamespace(c("doParallel", "foreach"), quietly=TRUE))
       {
-         library("doParallel")
          colnames(ped2) = c("ID", "SIRE", "DAM")
          Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
          if(ncl > Ngg) ncl = Ngg
@@ -33,7 +31,8 @@ qmatXL = function(ped2, ncl) {
          animID = ped2[(Ngg+1):nrow(ped2),]$ID
          cl = parallel::makeCluster(ncl)
          doParallel::registerDoParallel(cl)
-         Q = foreach(i=ggID, .combine='cbind') %dopar%
+         `%dopar%` <- foreach::`%dopar%`
+         Q = foreach::foreach(i=ggID, .combine='cbind') %dopar%
          {
             Qc = matrix(0, nrow=nrow(ped2)-Ngg, dimnames=list(animID, i))
             # Function to Calculate the 1st row of A
@@ -49,7 +48,7 @@ qmatXL = function(ped2, ncl) {
                }
                A.row1 = ped3[,c("ID","rg")]
                return(A.row1)
-            }
+            } # End of the function
             # Function to extract pedigree from an ancestor
             peddown = function(ped2, indv) {
                oldped = data.frame()
@@ -66,18 +65,18 @@ qmatXL = function(ped2, ncl) {
                newped[!newped$DAM  %in% newped$ID,]$DAM  = 0
                newped = newped[order(newped$ID),]
                return(newped)
-            }
+            } # End of the function
             descendants = peddown(ped2, i)
             A.row1 = Arow1(descendants)[-1,]
             for(j in 1:nrow(A.row1)) Qc[as.character(A.row1[j,]$ID),] = A.row1[j,]$rg
             Qc
          }
-         stopCluster(cl)
+         parallel::stopCluster(cl)
          return(Q)
       } else {
          print("Package doParallel needed for this function to work. Please install it.")
       }
    } else {
-      print("ERROR: Use qmatL() for ncl < 2.")
+      print("ERROR: Use qmatL() for ncl < 2")
    }
 }
