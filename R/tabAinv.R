@@ -1,25 +1,24 @@
-#' @title Inverse of the relationship matrix \strong{A} in a tubular format
+#' @title Inverse of the relationship matrix \strong{A} in a tabular format
 #'
 #' @description Creates the inverse of the pedigree-based additive genetic relationship matrix in a \code{data.frame}.
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param inb : Inbreeding coefficients in the order of animals in the relationship matrix. It can be derived from \code{buildA} or \code{tubularA}.
-#'
-#' @details
-#' \code{inb = diag(buildA) - 1}, or
-#'
-#' \code{inb = tubA(ped); inb = inb[inb[,1]==inb[,2],]$a - 1}
+#' @param inb : Inbreeding coefficients in the order of animals in the relationship matrix.
 #'
 #' @return Inverse of the genetic relationship \code{data.frame}
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
 #' inb = c(0, 0, 0, 0.25, 0, 0.25)
-#' tubAinv(ped, inb)
+#' # or
+#' (inb = diag(buildA(ped)) - 1)
+#' # or
+#' inb = tabA(ped); (inb = inb[inb[,1]==inb[,2],]$a - 1)
+#' tabAinv(ped, inb)
 #'
 #' @export
-tubAinv = function(ped, inb) {
+tabAinv = function(ped, inb) {
    colnames(ped) = c("ID", "SIRE", "DAM")
    if(length(inb[inb < 0 | inb > 1])==0)
    {

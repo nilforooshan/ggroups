@@ -9,7 +9,7 @@ qmatXL(ped2, ncl)
 \arguments{
 \item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
 
-\item{ncl}{: User defined number of nodes; if the number of nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.}
+\item{ncl}{: User defined number of nodes; if the number of user defined nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.}
 }
 \value{
 Matrix \strong{Q}

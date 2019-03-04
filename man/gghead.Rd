@@ -13,30 +13,30 @@ gghead(ped)
 Processed pedigree \code{data.frame}
 }
 \description{
-Appends genetic groups to the head of the pedigree and sorts it.
+This function appends parents that are not available in the first column of the pedigree, to the head of the pedigree, and sorts it. Given a pedigree with all missing parents replaced with the corresponding genetic groups, this functions appends genetic groups to the head of the pedigree.
 }
 \details{
 Consider this simple pedigree:
 
-3 0 0
+\code{3 0 0}
 
-4 3 0
+\code{4 3 0}
 
-6 4 5
+\code{6 4 5}
 
-5 0 0
+\code{5 0 0}
 
 First, unknown parents are replaced with the corresponding genetic groups.
 
 Please note that unknown parent IDs should be smaller than animal IDs.
 
-3 1 2
+\code{3 1 2}
 
-4 3 2
+\code{4 3 2}
 
-6 4 5
+\code{6 4 5}
 
-5 1 2
+\code{5 1 2}
 
 Then, \code{gghead} is applied to this pedigree (see the example).
 }

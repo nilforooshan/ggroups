@@ -7,7 +7,7 @@
 #' @author Mohammad Ali Nilforooshan \email{m.a.nilforooshan@gmail.com}
 #'
 #' @description
-#' This package contains pedigree processing and analyzing functions, including functions for checking and renumbering the pedigree, making the pedigree relationship matrix and its inverse, in matrix and tubular formats, as well as functions related to genetic groups.
+#' This package contains pedigree processing and analyzing functions, including functions for checking and renumbering the pedigree, making the pedigree relationship matrix and its inverse, in matrix and tabular formats, as well as functions related to genetic groups.
 #'
 #' @details
 #' First, it is recommended to check the pedigree \code{data.frame} with the \code{pedcheck} function. Pedigree relationship matrix and its inverse are fundamentals in the conventional and modern animal breeding. The concept of genetic groups stems from the fact that not all the unknown parents are of the same genetic level. The genetic group contribution matrix (\strong{Q}) is required to weight and add genetic group effects (\strong{ĝ}) to the genetic merit of animals (\strong{û}), which is equal to \strong{Qĝ} + \strong{û} (Quaas, 1988). Calculating \strong{Q} is computationally challenging, and for large pedigree, large RAM and long computational time is required. Therefore, the functions \code{qmatL} and its parallel version, \code{qmatXL} are introduced. Overlap between sire and dam genetic groups is supported.

@@ -33,6 +33,7 @@ renum = function(ped) {
    }
    newped[] = xrf$newID[match(unlist(newped), xrf$ID)]
    newped[is.na(newped)] = 0
+   newped = newped[order(newped$ID),]
    xrf$ID = substring(xrf$ID, 2)
    print(paste("Found", gen, "generations"))
    return(list(newped, xrf))

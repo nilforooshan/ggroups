@@ -1,4 +1,4 @@
-#' @title Relationship matrix \strong{A} in a tubular format
+#' @title Relationship matrix \strong{A} in a tabular format
 #'
 #' @description Creates the pedigree-based additive genetic relationship \code{data.frame}.
 #'
@@ -8,10 +8,10 @@
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
-#' tubA(ped)
+#' tabA(ped)
 #'
 #' @export
-tubA = function(ped) {
+tabA = function(ped) {
    colnames(ped) = c("ID", "SIRE", "DAM")
    curr.set = ped[ped$SIRE==0 & ped$DAM==0,]$ID
    tbA = data.frame(ID1=curr.set, ID2=curr.set, a=1)

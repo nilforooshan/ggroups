@@ -7,7 +7,7 @@
 #'
 #' @param ped2 : The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})
 #'
-#' @param ncl : User defined number of nodes; if the number of nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.
+#' @param ncl : User defined number of nodes; if the number of user defined nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.
 #'
 #' @return Matrix \strong{Q}
 #'
