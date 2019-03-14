@@ -32,7 +32,7 @@ qmatXL = function(ped2, ncl) {
          cl = parallel::makeCluster(ncl)
          doParallel::registerDoParallel(cl)
          `%dopar%` <- foreach::`%dopar%`
-         Q = foreach::foreach(i=ggID, .combine='cbind') %dopar%
+         Q = foreach::foreach(i=ggID, .combine='cbind', .export='peddown') %dopar%
          {
             Qc = matrix(0, nrow=nrow(ped2)-Ngg, dimnames=list(animID, i))
             # Function to Calculate the 1st row of A
@@ -48,23 +48,6 @@ qmatXL = function(ped2, ncl) {
                }
                A.row1 = ped3[,c("ID","rg")]
                return(A.row1)
-            } # End of the function
-            # Function to extract pedigree from an ancestor
-            peddown = function(ped2, indv) {
-               oldped = data.frame()
-               newped = data.frame(ID=indv, SIRE=0, DAM=0)
-               parents = indv
-               while(nrow(oldped) < nrow(newped))
-               {
-                  oldped = newped
-                  tmp = ped2[ped2$SIRE %in% parents | ped2$DAM %in% parents,]
-                  newped = unique(rbind(newped, tmp))
-                  parents = tmp$ID
-               }
-               newped[!newped$SIRE %in% newped$ID,]$SIRE = 0
-               newped[!newped$DAM  %in% newped$ID,]$DAM  = 0
-               newped = newped[order(newped$ID),]
-               return(newped)
             } # End of the function
             descendants = peddown(ped2, i)
             A.row1 = Arow1(descendants)[-1,]

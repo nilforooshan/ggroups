@@ -4,9 +4,9 @@
 #'
 #' @param Q : The output matrix from \code{qmat} (for more details: \code{?qmat})
 #'
-#' @param sol : \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]), where \strong{ĝ} and \strong{û} are the genetic group and genetic merit solutions, respectively. The order of solutions must be the order of columns and the order of rows in matrix \strong{Q}.
+#' @param sol : \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{g}, \strong{u}]), where \strong{g} and \strong{u} are the genetic group and genetic merit solutions, respectively. The order of solutions must be the order of columns and the order of rows in matrix \strong{Q}.
 #'
-#' @return Vector of \strong{Qĝ} + \strong{û}
+#' @return Vector of \strong{Qg} + \strong{u}
 #'
 #' @examples
 #' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
@@ -20,6 +20,7 @@
 Qgpu = function(Q, sol) {
    if(identical(as.integer(c(colnames(Q), rownames(Q))), sol$ID))
    {
+      colnames(sol) = c("ID","EBV")
       Ngg = ncol(Q)
       ghat = sol[1:Ngg,]$EBV
       uhat = sol[(Ngg + 1):nrow(sol),]$EBV

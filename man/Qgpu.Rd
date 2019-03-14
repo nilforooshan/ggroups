@@ -9,10 +9,10 @@ Qgpu(Q, sol)
 \arguments{
 \item{Q}{: The output matrix from \code{qmat} (for more details: \code{?qmat})}
 
-\item{sol}{: \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{ĝ}, \strong{û}]), where \strong{ĝ} and \strong{û} are the genetic group and genetic merit solutions, respectively. The order of solutions must be the order of columns and the order of rows in matrix \strong{Q}.}
+\item{sol}{: \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\strong{g}, \strong{u}]), where \strong{g} and \strong{u} are the genetic group and genetic merit solutions, respectively. The order of solutions must be the order of columns and the order of rows in matrix \strong{Q}.}
 }
 \value{
-Vector of \strong{Qĝ} + \strong{û}
+Vector of \strong{Qg} + \strong{u}
 }
 \description{
 Adds genetic group contributions to the genetic merit of animals.
