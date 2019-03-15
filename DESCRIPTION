@@ -1,7 +1,7 @@
 Package: ggroups
 Title: Pedigree and Genetic Groups
-Version: 1.1.0
-Date: 2019-03-14
+Version: 1.1.1
+Date: 2019-03-15
 Authors@R: person("Mohammad Ali", "Nilforooshan", email="m.a.nilforooshan@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-0339-5442"))
 Description: Calculates additive genetic relationship matrix and its inverse, in matrix and tabular-sparse formats. It includes functions for checking and processing pedigree, as well as functions to calculate the matrix of genetic group contributions (Q), and adding those contributions to the genetic merit of animals (Quaas (1988) <doi:10.3168/jds.S0022-0302(88)79691-5>). Calculation of Q is computationally extensive. There are computationally optimized functions to calculate Q.
 License: GPL-3
