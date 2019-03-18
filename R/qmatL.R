@@ -24,20 +24,6 @@ qmatL = function(ped2) {
    ggID = ped2[1:Ngg,]$ID
    animID = ped2[(Ngg+1):nrow(ped2),]$ID
    Q = matrix(0, nrow=nrow(ped2)-Ngg, ncol=Ngg, dimnames=list(animID, ggID))
-   # Function to Calculate the 1st row of A
-   Arow1 = function(ped3) {
-      ped3$rg = 0
-      ped3[1,]$rg = 1
-      for(i in 2:nrow(ped3))
-      {
-         i_s = i_d = 0
-         if(ped3[i,]$SIRE > 0) i_s = ped3[ped3$ID==ped3[i,]$SIRE,]$rg
-         if(ped3[i,]$DAM  > 0) i_d = ped3[ped3$ID==ped3[i,]$DAM ,]$rg
-         ped3[i,]$rg = (i_s + i_d)/2
-      }
-      A.row1 = ped3[,c("ID","rg")]
-      return(A.row1)
-   } # End of the function
    for(i in ggID)
    {
       print(paste("Processing genetic group", i))

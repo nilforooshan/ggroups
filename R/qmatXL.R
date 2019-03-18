@@ -32,23 +32,9 @@ qmatXL = function(ped2, ncl) {
          cl = parallel::makeCluster(ncl)
          doParallel::registerDoParallel(cl)
          `%dopar%` <- foreach::`%dopar%`
-         Q = foreach::foreach(i=ggID, .combine='cbind', .export='peddown') %dopar%
+         Q = foreach::foreach(i=ggID, .combine='cbind', .export=c('Arow1', 'peddown')) %dopar%
          {
             Qc = matrix(0, nrow=nrow(ped2)-Ngg, dimnames=list(animID, i))
-            # Function to Calculate the 1st row of A
-            Arow1 = function(ped3) {
-               ped3$rg = 0
-               ped3[1,]$rg = 1
-               for(i in 2:nrow(ped3))
-               {
-                  i_s = i_d = 0
-                  if(ped3[i,]$SIRE > 0) i_s = ped3[ped3$ID==ped3[i,]$SIRE,]$rg
-                  if(ped3[i,]$DAM  > 0) i_d = ped3[ped3$ID==ped3[i,]$DAM ,]$rg
-                  ped3[i,]$rg = (i_s + i_d)/2
-               }
-               A.row1 = ped3[,c("ID","rg")]
-               return(A.row1)
-            } # End of the function
             descendants = peddown(ped2, i)
             A.row1 = Arow1(descendants)[-1,]
             for(j in 1:nrow(A.row1)) Qc[as.character(A.row1[j,]$ID),] = A.row1[j,]$rg

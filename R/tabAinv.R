@@ -15,6 +15,8 @@
 #' (inb = diag(buildA(ped)) - 1)
 #' # or
 #' inb = tabA(ped); (inb = inb[inb[,1]==inb[,2],]$a - 1)
+#' # or
+#' # For individual inbreeding values, use function inb.
 #' tabAinv(ped, inb)
 #'
 #' @export
