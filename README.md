@@ -1,6 +1,6 @@
 # Package 'ggroups'
 
-Version 1.1.2
+Version 1.1.3
 
 ## Installation
 
@@ -20,7 +20,7 @@ devtools::install_github('nilforooshan/ggroups')
 or
 
 ```r
-file_tar.gz = 'ggroups_1.1.2.tar.gz' # Find the filename at https://github.com/nilforooshan/Link-resources/raw/master/link_resources/
+file_tar.gz = 'ggroups_1.1.3.tar.gz' # Find the filename at https://github.com/nilforooshan/Link-resources/raw/master/link_resources/
 installer = file.path(tempdir(), file_tar.gz)
 download.file(paste0("https://github.com/nilforooshan/Link-resources/raw/master/link_resources/", file_tar.gz), destfile=installer)
 install.packages(installer, repos=NULL, type='source')

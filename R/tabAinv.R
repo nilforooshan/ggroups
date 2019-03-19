@@ -4,27 +4,27 @@
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param inb : Inbreeding coefficients in the order of animals in the relationship matrix.
+#' @param inbr : Inbreeding coefficients in the order of animals in the relationship matrix.
 #'
 #' @return Inverse of the genetic relationship \code{data.frame}
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
-#' inb = c(0, 0, 0, 0.25, 0, 0.25)
+#' inbr = c(0, 0, 0, 0.25, 0, 0.25)
 #' # or
-#' (inb = diag(buildA(ped)) - 1)
+#' (inbr = diag(buildA(ped)) - 1)
 #' # or
-#' inb = tabA(ped); (inb = inb[inb[,1]==inb[,2],]$a - 1)
+#' inbr = tabA(ped); (inbr = inbr[inbr[,1]==inbr[,2],]$a - 1)
 #' # or
 #' # For individual inbreeding values, use function inb.
-#' tabAinv(ped, inb)
+#' tabAinv(ped, inbr)
 #'
 #' @export
-tabAinv = function(ped, inb) {
+tabAinv = function(ped, inbr) {
    colnames(ped) = c("ID", "SIRE", "DAM")
-   if(length(inb[inb < 0 | inb > 1])==0)
+   if(length(inbr[inbr < 0 | inbr > 1])==0)
    {
-      if(nrow(ped)==length(inb))
+      if(nrow(ped)==length(inbr))
       {
          curr.set = ped[ped$SIRE==0 & ped$DAM==0,]$ID
          tbAinv = data.frame(ID1=curr.set, ID2=curr.set, ai=1)
@@ -36,8 +36,8 @@ tabAinv = function(ped, inb) {
             {
                if(curr.set[i,]$SIRE!=0 & curr.set[i,]$DAM!=0)
                {
-                  Fs = inb[which(unique(sort(ped$ID))==curr.set[i,]$SIRE)]
-                  Fd = inb[which(unique(sort(ped$ID))==curr.set[i,]$DAM) ]
+                  Fs = inbr[which(unique(sort(ped$ID))==curr.set[i,]$SIRE)]
+                  Fd = inbr[which(unique(sort(ped$ID))==curr.set[i,]$DAM) ]
                   x = 1/(2 - Fs - Fd)
                   tbAinv[tbAinv$ID1==curr.set[i,]$SIRE & tbAinv$ID2==curr.set[i,]$SIRE,]$ai =
                   tbAinv[tbAinv$ID1==curr.set[i,]$SIRE & tbAinv$ID2==curr.set[i,]$SIRE,]$ai+x
@@ -56,7 +56,7 @@ tabAinv = function(ped, inb) {
                   tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$DAM,  -2*x))
                   tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$ID,    4*x))
                } else {
-                  Fp = inb[which(unique(sort(ped$ID))==curr.set[i,2:3][curr.set[i,2:3]!=0])]
+                  Fp = inbr[which(unique(sort(ped$ID))==curr.set[i,2:3][curr.set[i,2:3]!=0])]
                   x = 1/(3 - Fp)
                   tbAinv[tbAinv$ID1==curr.set[i,2:3][curr.set[i,2:3]!=0] & tbAinv$ID2==curr.set[i,2:3][curr.set[i,2:3]!=0],]$ai =
                   tbAinv[tbAinv$ID1==curr.set[i,2:3][curr.set[i,2:3]!=0] & tbAinv$ID2==curr.set[i,2:3][curr.set[i,2:3]!=0],]$ai+x

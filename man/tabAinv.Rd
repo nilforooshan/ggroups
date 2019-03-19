@@ -4,12 +4,12 @@
 \alias{tabAinv}
 \title{Inverse of the relationship matrix \strong{A} in a tabular format}
 \usage{
-tabAinv(ped, inb)
+tabAinv(ped, inbr)
 }
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
-\item{inb}{: Inbreeding coefficients in the order of animals in the relationship matrix.}
+\item{inbr}{: Inbreeding coefficients in the order of animals in the relationship matrix.}
 }
 \value{
 Inverse of the genetic relationship \code{data.frame}
@@ -19,13 +19,13 @@ Creates the inverse of the pedigree-based additive genetic relationship matrix i
 }
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
-inb = c(0, 0, 0, 0.25, 0, 0.25)
+inbr = c(0, 0, 0, 0.25, 0, 0.25)
 # or
-(inb = diag(buildA(ped)) - 1)
+(inbr = diag(buildA(ped)) - 1)
 # or
-inb = tabA(ped); (inb = inb[inb[,1]==inb[,2],]$a - 1)
+inbr = tabA(ped); (inbr = inbr[inbr[,1]==inbr[,2],]$a - 1)
 # or
 # For individual inbreeding values, use function inb.
-tabAinv(ped, inb)
+tabAinv(ped, inbr)
 
 }
