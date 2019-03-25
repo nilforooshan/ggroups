@@ -15,7 +15,7 @@
 qmat = function(ped2) {
    colnames(ped2) = c("ID", "SIRE", "DAM")
    Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
-   print(paste("Found", Ngg, "genetic groups"))
+   message(paste("Found", Ngg, "genetic groups"))
    Q = buildA(ped2)[-Ngg:-1, 1:Ngg]
    return(Q)
 }

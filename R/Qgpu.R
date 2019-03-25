@@ -18,15 +18,11 @@
 #'
 #' @export
 Qgpu = function(Q, sol) {
-   if(identical(as.integer(c(colnames(Q), rownames(Q))), sol$ID))
-   {
-      colnames(sol) = c("ID","EBV")
-      Ngg = ncol(Q)
-      ghat = sol[1:Ngg,]$EBV
-      uhat = sol[(Ngg + 1):nrow(sol),]$EBV
-      uhatplus = (Q %*% ghat) + uhat
-      return(uhatplus)
-   } else {
-      print("ERROR: identical(c(colnames(Q), rownames(Q)), sol$ID) = FALSE")
-   }
+   if(!identical(as.integer(c(colnames(Q), rownames(Q))), sol$ID)) stop("identical(c(colnames(Q), rownames(Q)), sol$ID) = FALSE")
+   colnames(sol) = c("ID","EBV")
+   Ngg = ncol(Q)
+   ghat = sol[1:Ngg,]$EBV
+   uhat = sol[(Ngg + 1):nrow(sol),]$EBV
+   uhatplus = (Q %*% ghat) + uhat
+   return(uhatplus)
 }

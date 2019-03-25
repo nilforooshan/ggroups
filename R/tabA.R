@@ -42,6 +42,6 @@ tabA = function(ped) {
       gen = gen + 1
    }
    tbA = tbA[order(tbA$ID1, tbA$ID2),]
-   print(paste("Found", gen, "generations"))
+   message(paste("Found", gen, "generations"))
    return(tbA)
 }

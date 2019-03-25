@@ -40,13 +40,9 @@ gghead = function(ped) {
    colnames(ped) = c("ID", "SIRE", "DAM")
    parents = c(unique(ped$SIRE), unique(ped$DAM))
    gg = parents[!parents %in% ped$ID]
-   if(max(gg) < min(ped$ID))
-   {
-      tmp = data.frame(ID=gg, SIRE=rep(0, length(gg)), DAM=rep(0, length(gg)))
-      ped2 = rbind(tmp, ped)
-      ped2 = ped2[order(ped2$ID),]
-      return(ped2)
-   } else {
-      print(paste("ERROR: max(genetic group ID)", max(gg), ">", min(ped$ID), "min(ID)"))
-   }
+   if(max(gg) >= min(ped$ID)) stop(paste("max(genetic group ID)", max(gg), ">=", min(ped$ID), "min(ID)"))
+   tmp = data.frame(ID=gg, SIRE=rep(0, length(gg)), DAM=rep(0, length(gg)))
+   ped2 = rbind(tmp, ped)
+   ped2 = ped2[order(ped2$ID),]
+   return(ped2)
 }

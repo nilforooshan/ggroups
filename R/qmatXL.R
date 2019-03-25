@@ -19,33 +19,29 @@
 if(getRversion() >= "2.15.1")  utils::globalVariables("i")
 #' @export
 qmatXL = function(ped2, ncl) {
-   if(ncl > 1)
+   if(ncl < 2) stop("Use qmatL() for ncl < 2")
+   if(requireNamespace(c("doParallel", "foreach"), quietly=TRUE))
    {
-      if(requireNamespace(c("doParallel", "foreach"), quietly=TRUE))
+      colnames(ped2) = c("ID", "SIRE", "DAM")
+      Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
+      if(ncl > Ngg) ncl = Ngg
+      message(paste("Found", Ngg, "genetic groups"))
+      ggID = ped2[1:Ngg,]$ID
+      animID = ped2[(Ngg+1):nrow(ped2),]$ID
+      cl = parallel::makeCluster(ncl)
+      doParallel::registerDoParallel(cl)
+      `%dopar%` <- foreach::`%dopar%`
+      Q = foreach::foreach(i=ggID, .combine='cbind', .export=c('Arow1', 'peddown')) %dopar%
       {
-         colnames(ped2) = c("ID", "SIRE", "DAM")
-         Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
-         if(ncl > Ngg) ncl = Ngg
-         print(paste("Found", Ngg, "genetic groups"))
-         ggID = ped2[1:Ngg,]$ID
-         animID = ped2[(Ngg+1):nrow(ped2),]$ID
-         cl = parallel::makeCluster(ncl)
-         doParallel::registerDoParallel(cl)
-         `%dopar%` <- foreach::`%dopar%`
-         Q = foreach::foreach(i=ggID, .combine='cbind', .export=c('Arow1', 'peddown')) %dopar%
-         {
-            Qc = matrix(0, nrow=nrow(ped2)-Ngg, dimnames=list(animID, i))
-            descendants = peddown(ped2, i)
-            A.row1 = Arow1(descendants)[-1,]
-            for(j in 1:nrow(A.row1)) Qc[as.character(A.row1[j,]$ID),] = A.row1[j,]$rg
-            Qc
-         }
-         parallel::stopCluster(cl)
-         return(Q)
-      } else {
-         print("Package doParallel needed for this function to work. Please install it.")
+         Qc = matrix(0, nrow=nrow(ped2)-Ngg, dimnames=list(animID, i))
+         descendants = peddown(ped2, i)
+         A.row1 = Arow1(descendants)[-1,]
+         for(j in 1:nrow(A.row1)) Qc[as.character(A.row1[j,]$ID),] = A.row1[j,]$rg
+         Qc
       }
+      parallel::stopCluster(cl)
+      return(Q)
    } else {
-      print("ERROR: Use qmatL() for ncl < 2")
+      message("Package doParallel needed for this function to work. Please install it.")
    }
 }

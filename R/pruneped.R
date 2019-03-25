@@ -23,6 +23,7 @@
 #' @export
 pruneped = function(ped, pheno, mode) {
    colnames(ped) = c("ID","SIRE","DAM")
+   if(!mode %in% c("strict","loose")) stop("Choose mode strict or loose.")
    if(mode=="strict")
    {
       newped = data.frame()
@@ -43,12 +44,10 @@ pruneped = function(ped, pheno, mode) {
       noparentnoprogeny = intersect(noparent, noprogeny)
       newped = newped[!newped$ID %in% noparentnoprogeny,]
       return(newped)
-   } else if(mode=="loose") {
+   } else {
       founders = pedup(ped, pheno)
       founders = founders[founders$SIRE==0 & founders$DAM==0,]$ID
       newped = peddown(ped, founders)
       return(newped)
-   } else {
-      print("Choose mode strict or loose.")
    }
 }
