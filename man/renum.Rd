@@ -12,7 +12,7 @@ renum(ped)
 \value{
 newped : Pedigree \code{data.frame} with renumberred IDs.
 
-Cross-reference \code{data.frame} with 2 columns for original and renumberred IDs.
+xrf : Cross-reference \code{data.frame} with 2 columns for original and renumberred IDs.
 }
 \description{
 Renumbering pedigree to numerical IDs, so that progeny's ID is smaller than parents' IDs.

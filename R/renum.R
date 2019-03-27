@@ -6,7 +6,7 @@
 #'
 #' @return newped : Pedigree \code{data.frame} with renumberred IDs.
 #'
-#' @return Cross-reference \code{data.frame} with 2 columns for original and renumberred IDs.
+#' @return xrf : Cross-reference \code{data.frame} with 2 columns for original and renumberred IDs.
 #'
 #' @examples
 #' ped = data.frame(ID=letters[1:6], SIRE=c(0,0,letters[c(1,3,1,4)]), DAM=c(0,0,letters[c(2,2,2,5)]))

@@ -18,64 +18,64 @@ pedcheck = function(ped) {
    WARNS = 0
    if(nrow(ped[duplicated(ped$ID),]) > 0)
    {
-      warning("Found duplicates in the first column:")
-      message(sort(unique(ped$ID[duplicated(ped$ID)])))
+      cat("Found duplicates in the first column:", "\n")
+      cat(sort(unique(ped$ID[duplicated(ped$ID)])), "\n")
       WARNS = WARNS + 1
    }
    if(nrow(ped[na.omit(ped$ID)==0,]) > 0)
    {
-      warning("Found zeros in the first column, in the following rows:")
-      message(which(ped$ID==0))
+      cat("Found zeros in the first column, in the following rows:", "\n")
+      cat(which(ped$ID==0), "\n")
       WARNS = WARNS + 1
    }
    if(nrow(ped[is.na(ped)==TRUE,]) > 0)
    {
-      warning("Found missing values in the following rows:")
-      message(which(is.na(ped$ID) | is.na(ped$SIRE) | is.na(ped$DAM)))
+      cat("Found missing values in the following rows:", "\n")
+      cat(which(is.na(ped$ID) | is.na(ped$SIRE) | is.na(ped$DAM)), "\n")
       WARNS = WARNS + 1
    }
    sires = unique(ped$SIRE[ped$SIRE!=0])
    dams  = unique(ped$DAM[ped$DAM!=0])
    if(length(intersect(sires, dams)) > 0)
    {
-      warning("Found parents represented as both sire and dam:")
-      message(sort(intersect(sires, dams)))
+      cat("Found parents represented as both sire and dam:", "\n")
+      cat(sort(intersect(sires, dams)), "\n")
       WARNS = WARNS + 1
    }
    if(length(sires[!sires %in% ped$ID]) > 0)
    {
-      warning("Found sires not available in the first column:")
-      message(sort(sires[!sires %in% ped$ID]))
+      cat("Found sires not available in the first column:", "\n")
+      cat(sort(sires[!sires %in% ped$ID]), "\n")
       WARNS = WARNS + 1
    }
    if(length(dams[!dams %in% ped$ID]) > 0)
    {
-      warning("Found dams not available in the first column:")
-      message(sort(dams[!dams %in% ped$ID]))
+      cat("Found dams not available in the first column:", "\n")
+      cat(sort(dams[!dams %in% ped$ID]), "\n")
       WARNS = WARNS + 1
    }
    if(nrow(ped[ped$ID <= ped$SIRE,]) > 0)
    {
-      warning("Found individuals with an ID not greater than sire ID:")
-      message(sort(ped[ped$ID <= ped$SIRE,]$ID))
+      cat("Found individuals with an ID not greater than sire ID:", "\n")
+      cat(sort(ped[ped$ID <= ped$SIRE,]$ID), "\n")
       WARNS = WARNS + 1
    }
    if(nrow(ped[ped$ID <= ped$DAM,]) > 0)
    {
-      warning("Found individuals with an ID not greater than dam ID:")
-      message(sort(ped[ped$ID <= ped$DAM,]$ID))
+      cat("Found individuals with an ID not greater than dam ID:", "\n")
+      cat(sort(ped[ped$ID <= ped$DAM,]$ID), "\n")
       WARNS = WARNS + 1
    }
    if(identical(ped$ID, sort(ped$ID))==FALSE)
    {
-      warning("Pedigree is not sorted.")
+      cat("Pedigree is not sorted.", "\n")
       WARNS = WARNS + 1
    }
    if(length(intersect(na.omit(ped[ped$SIRE==0 & ped$DAM==0,]$ID), ped$ID[!ped$ID %in% ped$SIRE & !ped$ID %in% ped$DAM])) > 0)
    {
-      warning("Found individuals with no parent and no progeny. You may consider excluding them:")
-      message(sort(intersect(na.omit(ped[ped$SIRE==0 & ped$DAM==0,]$ID), ped$ID[!ped$ID %in% ped$SIRE & !ped$ID %in% ped$DAM])))
+      cat("Found individuals with no parent and no progeny. You may consider excluding them:", "\n")
+      cat(sort(intersect(na.omit(ped[ped$SIRE==0 & ped$DAM==0,]$ID), ped$ID[!ped$ID %in% ped$SIRE & !ped$ID %in% ped$DAM])), "\n")
       WARNS = WARNS + 1
    }
-   if(WARNS==0) message("No warnings!")
+   if(WARNS==0) cat("No warnings!", "\n")
 }
