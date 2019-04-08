@@ -7,8 +7,7 @@
 
 # Package 'ggroups'
 
-The official release of the package is available at CRAN:   
-[https://CRAN.R-project.org/package=ggroups](https://CRAN.R-project.org/package=ggroups)
+The official release of the package is available at CRAN: [https://CRAN.R-project.org/package=ggroups](https://CRAN.R-project.org/package=ggroups)
 
 This repository contains the official and development releases. Please notice the badges on top of the page for CRAN and release versions.
 
@@ -45,3 +44,5 @@ This package contains pedigree processing and analyzing functions, including fun
 First, it is recommended to check the pedigree `data.frame` with the `pedcheck` function. Pedigree relationship matrix and its inverse are fundamentals in the conventional and modern animal breeding. The concept of genetic groups stems from the fact that not all the unknown parents are of the same genetic level. The genetic group contribution matrix (**Q**) is required to weight and add genetic group effects (**&gcirc;**) to the genetic merit of animals (**&ucirc;**), which is equal to **Q&gcirc;** + **&ucirc;** ([Quaas, 1988](https://doi.org/10.3168/jds.S0022-0302(88)79691-5)). Calculating **Q** is computationally challenging, and for large pedigree, large RAM and long computational time is required. Therefore, the functions `qmatL` and its parallel version, `qmatXL` are introduced. Overlap between sire and dam genetic groups is supported.
 
 ### For more details, please read the PDF manual.
+
+Thanks
