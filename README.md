@@ -1,6 +1,16 @@
+[![cran-version](https://www.r-pkg.org/badges/version/badger?color=green)](https://cran.r-project.org/package=badger)
+[![cran-downloads](http://cranlogs.r-pkg.org/badges/grand-total/badger?color=green)](https://cran.r-project.org/package=badger)
+[![github-release](https://img.shields.io/github/release/nilforooshan/ggroups.svg)](https://github.com/nilforooshan/ggroups)
+![github-license](https://img.shields.io/github/license/nilforooshan/ggroups.svg)
+[![Rdoc](http://www.rdocumentation.org/badges/version/ggroups)](http://www.rdocumentation.org/packages/ggroups)
+[![HitCount](http://hits.dwyl.io/nilforooshan/ggroups.svg)](http://hits.dwyl.io/nilforooshan/ggroups)
+
 # Package 'ggroups'
 
-Version 1.1.4
+The official release of the package is available at CRAN:   
+[https://CRAN.R-project.org/package=ggroups](https://CRAN.R-project.org/package=ggroups)
+
+This repository contains the official and development releases. Please notice the badges on top of the page for CRAN and release versions.
 
 ## Installation
 
