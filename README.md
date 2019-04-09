@@ -4,6 +4,7 @@
 ![github-license](https://img.shields.io/github/license/nilforooshan/ggroups.svg)
 [![Rdoc](http://www.rdocumentation.org/badges/version/ggroups)](http://www.rdocumentation.org/packages/ggroups)
 [![HitCount](http://hits.dwyl.io/nilforooshan/ggroups.svg)](http://hits.dwyl.io/nilforooshan/ggroups)
+[![GitHub contributors](https://img.shields.io/github/contributors/nilforooshan/ggroups.svg)](https://GitHub.com/nilforooshan/ggroups/graphs/contributors/)
 
 # Package 'ggroups'
 
