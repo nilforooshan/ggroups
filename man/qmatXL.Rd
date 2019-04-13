@@ -12,7 +12,7 @@ qmatXL(ped2, ncl)
 \item{ncl}{: User defined number of nodes; if the number of user defined nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.}
 }
 \value{
-Matrix \strong{Q}
+\strong{Q} \code{matrix}
 }
 \description{
 Creates the genetic group contribution matrix for large pedigrees, with parallel processing.

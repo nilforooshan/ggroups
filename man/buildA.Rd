@@ -10,7 +10,7 @@ buildA(ped)
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 }
 \value{
-Relationship matrix \strong{A}
+Relationship \code{matrix} \strong{A}
 }
 \description{
 Builds the pedigree-based additive genetic relationship matrix.

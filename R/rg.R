@@ -1,6 +1,6 @@
 #' @title Genetic relationship coefficient
 #'
-#' @description Calculate genetic relationship coefficient between two individuals.
+#' @description Calculates genetic relationship coefficient between two individuals.
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
@@ -17,7 +17,14 @@
 #' @export
 rg = function(ped, id1, id2) {
    colnames(ped) = c("ID","SIRE","DAM")
-   A = buildA(pruneped(ped, c(id1, id2), mode="strict"))
-   rG = A[which(rownames(A)==id1), which(rownames(A)==id2)]
+   if(all(ped[c(id1, id2), 2:3]==0))
+   {
+      rG = 0
+      if(identical(id1, id2)) rG = 1
+   } else {
+      A = buildA(pruneped(ped, c(id1, id2), mode="strict"))
+      rG = A[which(rownames(A)==id1), which(rownames(A)==id2)]
+      if(length(rG)==0) rG = 0
+   }
    return(rG)
 }

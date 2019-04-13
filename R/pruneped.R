@@ -3,12 +3,12 @@
 #' @description Pruning pedigree in two different modes (strict, loose)
 #'
 #' @details
-#' In strict pruning, animals without progeny and phenotype are recursively deleted from the pedigree, and then animals without known parent and without progeny (if any) are deleted. Therefore, all uninfluential animals are deleted. The downside is that animals without phenotype or phenotyped progeny cannot receive any genetic merit based on the information from their phenotyped relatives.
-#' In loose pruning, the pedigree is upward extracted for phenotyped animals to thier founders, and then the pedigree is downward extracted from the founders.
+#' In strict pruning, individuals without progeny and phenotype are recursively deleted from the pedigree, and then individuals without known parent and without progeny (if any) are deleted. Therefore, all uninfluential individuals are deleted. The downside is that individuals without phenotype or phenotyped progeny cannot receive any genetic merit based on the information from their phenotyped relatives.
+#' In loose pruning, the pedigree is upward extracted for phenotyped individuals to thier founders, and then the pedigree is downward extracted from the founders.
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param pheno : Vector of phenotyped animals
+#' @param pheno : Vector of phenotyped individuals
 #'
 #' @param mode : \code{strict} or \code{loose}
 #'

@@ -9,7 +9,7 @@
 #'
 #' @param ped2 : The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})
 #'
-#' @return Matrix \strong{Q}
+#' @return \strong{Q} \code{matrix}
 #'
 #' @examples
 #' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

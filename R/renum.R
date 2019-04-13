@@ -10,7 +10,8 @@
 #'
 #' @examples
 #' ped = data.frame(ID=letters[1:6], SIRE=c(0,0,letters[c(1,3,1,4)]), DAM=c(0,0,letters[c(2,2,2,5)]))
-#' renum(ped)
+#' renum(ped)$newped
+#' renum(ped)$xrf
 #'
 #' @export
 renum = function(ped) {
@@ -36,5 +37,5 @@ renum = function(ped) {
    newped = newped[order(newped$ID),]
    xrf$ID = substring(xrf$ID, 2)
    message(paste("Found", gen, "generations"))
-   return(list(newped, xrf))
+   return(list("newped"=newped, "xrf"=xrf))
 }

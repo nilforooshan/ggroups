@@ -4,7 +4,7 @@
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @return Relationship matrix \strong{A}
+#' @return Relationship \code{matrix} \strong{A}
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))

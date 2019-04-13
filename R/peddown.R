@@ -1,10 +1,10 @@
 #' @title Downward pedigree extraction
 #'
-#' @description Extract pedigree downward for one or a group of animals to find their descendants
+#' @description Extracts pedigree downward for one or a group of individuals to find their descendants
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param parents : Vector of animal(s), from which the new pedigree is being extracted.
+#' @param parents : Vector of individual ID(s), from which the new pedigree is being extracted.
 #'
 #' @return newped : Extracted pedigree \code{data.frame}
 #'

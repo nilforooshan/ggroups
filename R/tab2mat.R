@@ -4,7 +4,7 @@
 #'
 #' @param tab : \code{data.frame} with 2 integer (IDs) and 1 numeric (values) columns.
 #'
-#' @return \code{matrix}
+#' @return mat : \code{matrix}
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))

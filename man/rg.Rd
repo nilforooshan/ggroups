@@ -17,7 +17,7 @@ rg(ped, id1, id2)
 rG : Genetic relationship coefficient between the two individuals
 }
 \description{
-Calculate genetic relationship coefficient between two individuals.
+Calculates genetic relationship coefficient between two individuals.
 }
 \examples{
 ped = data.frame(ID=1:7, SIRE=c(0,0,1,1,3,1,5), DAM=c(0,0,0,2,4,4,6))

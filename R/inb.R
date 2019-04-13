@@ -1,6 +1,6 @@
 #' @title Inbreeding coefficient
 #'
-#' @description Calculate inbreeding coefficient for an individual.
+#' @description Calculates inbreeding coefficient for an individual.
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'

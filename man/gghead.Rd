@@ -28,7 +28,7 @@ Consider this simple pedigree:
 
 First, unknown parents are replaced with the corresponding genetic groups.
 
-Please note that unknown parent IDs should be smaller than animal IDs.
+Please note that unknown parent IDs should be smaller than progeny IDs.
 
 \code{3 1 2}
 

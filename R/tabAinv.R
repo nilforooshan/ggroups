@@ -1,12 +1,12 @@
 #' @title Inverse of the relationship matrix \strong{A} in a tabular format
 #'
-#' @description Creates the inverse of the pedigree-based additive genetic relationship matrix in a \code{data.frame}.
+#' @description Creates the \code{data.frame} of the inverse of the pedigree-based genetic relationship matrix.
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param inbr : Inbreeding coefficients in the order of animals in the relationship matrix.
+#' @param inbr : Vector of inbreeding coefficients in the order of individuals in the relationship matrix.
 #'
-#' @return Inverse of the genetic relationship \code{data.frame}
+#' @return \code{data.frame} of the inverse of the genetic relationship matrix
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
@@ -23,7 +23,7 @@
 tabAinv = function(ped, inbr) {
    colnames(ped) = c("ID", "SIRE", "DAM")
    if(any(inbr < 0 | inbr > 1)) stop("Inbreeding values should be between 0 and 1.")
-   if(nrow(ped)!=length(inbr)) stop("Number of animals in the pedigree does not match with the number of inbreeding values.")
+   if(nrow(ped)!=length(inbr)) stop("Number of individuals in the pedigree does not match with the number of inbreeding values.")
    curr.set = ped[ped$SIRE==0 & ped$DAM==0,]$ID
    tbAinv = data.frame(ID1=curr.set, ID2=curr.set, ai=1)
    ped2 = ped[!ped$ID %in% curr.set,]

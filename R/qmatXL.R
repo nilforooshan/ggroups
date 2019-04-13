@@ -9,7 +9,7 @@
 #'
 #' @param ncl : User defined number of nodes; if the number of user defined nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.
 #'
-#' @return Matrix \strong{Q}
+#' @return \strong{Q} \code{matrix}
 #'
 #' @examples
 #' ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

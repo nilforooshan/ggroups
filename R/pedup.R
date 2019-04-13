@@ -1,10 +1,10 @@
 #' @title Upward pedigree extraction
 #'
-#' @description Extract pedigree upward for one or a group of animals to find their ascendants
+#' @description Extracts pedigree upward for one or a group of individuals to find their ascendants
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param progeny : Vector of animal(s), from which the new pedigree is being extracted.
+#' @param progeny : Vector of individual ID(s), from which the new pedigree is being extracted.
 #'
 #' @return newped : Extracted pedigree \code{data.frame}
 #'

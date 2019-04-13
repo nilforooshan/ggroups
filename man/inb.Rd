@@ -15,7 +15,7 @@ inb(ped, id)
 Inb : Inbreeding coefficient of the individual
 }
 \description{
-Calculate inbreeding coefficient for an individual.
+Calculates inbreeding coefficient for an individual.
 }
 \examples{
 ped = data.frame(ID=1:7, SIRE=c(0,0,1,1,3,1,5), DAM=c(0,0,0,2,4,4,6))

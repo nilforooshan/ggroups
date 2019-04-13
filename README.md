@@ -6,11 +6,11 @@
 [![HitCount](http://hits.dwyl.io/nilforooshan/ggroups.svg)](http://hits.dwyl.io/nilforooshan/ggroups)
 [![GitHub contributors](https://img.shields.io/github/contributors/nilforooshan/ggroups.svg)](https://GitHub.com/nilforooshan/ggroups/graphs/contributors/)
 
-# Package 'ggroups'
+# R package 'ggroups'
 
 The official release of the package is available at CRAN: [https://CRAN.R-project.org/package=ggroups](https://CRAN.R-project.org/package=ggroups)
 
-This repository contains the official and development releases. Please notice the badges on top of the page for CRAN and release versions.
+This repository contains official and development releases. To check whether the latest official and the latest development versions are different, please notice the badges on top of the page for the official (CRAN) and development (release) versions.
 
 ## Installation
 
@@ -20,20 +20,11 @@ To get the current released version from CRAN:
 install.packages("ggroups")
 ```
 
-To get the current development version from GitHub, do one of the two followings:
+To get the current development version from GitHub:
 
 ```r
 # install.packages("devtools")
 devtools::install_github('nilforooshan/ggroups')
-```
-
-or
-
-```r
-file_tar.gz = 'ggroups_1.1.4.tar.gz' # Find the filename at https://github.com/nilforooshan/Link-resources/raw/master/link_resources/
-installer = file.path(tempdir(), file_tar.gz)
-download.file(paste0("https://github.com/nilforooshan/Link-resources/raw/master/link_resources/", file_tar.gz), destfile=installer)
-install.packages(installer, repos=NULL, type='source')
 ```
 
 ## Description

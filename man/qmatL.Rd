@@ -10,7 +10,7 @@ qmatL(ped2)
 \item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
 }
 \value{
-Matrix \strong{Q}
+\strong{Q} \code{matrix}
 }
 \description{
 Creates the genetic group contribution matrix for large pedigrees.

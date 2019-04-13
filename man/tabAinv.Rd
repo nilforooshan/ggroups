@@ -9,13 +9,13 @@ tabAinv(ped, inbr)
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
-\item{inbr}{: Inbreeding coefficients in the order of animals in the relationship matrix.}
+\item{inbr}{: Vector of inbreeding coefficients in the order of individuals in the relationship matrix.}
 }
 \value{
-Inverse of the genetic relationship \code{data.frame}
+\code{data.frame} of the inverse of the genetic relationship matrix
 }
 \description{
-Creates the inverse of the pedigree-based additive genetic relationship matrix in a \code{data.frame}.
+Creates the \code{data.frame} of the inverse of the pedigree-based genetic relationship matrix.
 }
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))

@@ -9,13 +9,13 @@ pedup(ped, progeny)
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
-\item{progeny}{: Vector of animal(s), from which the new pedigree is being extracted.}
+\item{progeny}{: Vector of individual ID(s), from which the new pedigree is being extracted.}
 }
 \value{
 newped : Extracted pedigree \code{data.frame}
 }
 \description{
-Extract pedigree upward for one or a group of animals to find their ascendants
+Extracts pedigree upward for one or a group of individuals to find their ascendants
 }
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
