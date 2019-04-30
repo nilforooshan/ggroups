@@ -3,6 +3,7 @@
 [![github-release](https://img.shields.io/github/release/nilforooshan/ggroups.svg)](https://github.com/nilforooshan/ggroups)
 [![github-license](https://img.shields.io/github/license/nilforooshan/ggroups.svg)](https://github.com/nilforooshan/ggroups/blob/master/LICENSE)
 [![github-contributors](https://img.shields.io/github/contributors/nilforooshan/ggroups.svg)](https://github.com/nilforooshan/ggroups/graphs/contributors/)
+[![Rdoc](http://www.rdocumentation.org/badges/version/ggroups)](http://www.rdocumentation.org/packages/ggroups)
 
 # R package 'ggroups'
 
