@@ -13,7 +13,6 @@
 #' @export
 mat2tab = function(mat) {
    if(isSymmetric(mat)==FALSE) stop("The matrix is not symmetric.")
-   rownames(mat) = colnames(mat) = 1:nrow(mat)
    ID1 = ID2 = c()
    for(i in 1:nrow(mat))
    {

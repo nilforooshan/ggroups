@@ -10,3 +10,8 @@
 * Added function `mat2tab`.
 * Added function `offspring`.
 * No backward incompatibility with the previous version
+
+## Version: 1.2.1
+
+* Added function `tabD`.
+* Added function `tabDinv`.
