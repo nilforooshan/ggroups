@@ -14,12 +14,10 @@
 tabD = function(ped) {
   colnames(ped) = c("ID", "SIRE", "DAM")
   A = buildA(ped)
-  baseanim = ped[ped$SIRE==0 & ped$DAM==0,]$ID
-  d0 = ped[ped$SIRE %in% baseanim & ped$DAM %in% baseanim,]$ID
-  d1 = ped[ped$SIRE==0 | ped$DAM==0,]$ID
-  excl = ped[ped$ID %in% c(d0, d1),]$ID
-  ped = ped[!ped$ID %in% excl,]
+  excl = ped[ped$SIRE==0 | ped$DAM==0,]$ID
   D = data.frame(ID1=excl, ID2=excl, d=1)
+  ped = ped[!ped$ID %in% excl,]
+  if(nrow(ped)==0) stop("No animals with both parents known")
   for(i in 1:nrow(ped))
   {
     for(j in i:nrow(ped))
@@ -34,7 +32,7 @@ tabD = function(ped) {
         Dj = ped[j,3]
         B = A[c(which(rownames(A)==Si), which(rownames(A)==Di)),
               c(which(colnames(A)==Sj), which(colnames(A)==Dj))]
-        dij = (B[1,2]*B[1,2] + B[1,1]*B[2,2])/4
+        dij = (B[1,2]*B[2,1] + B[1,1]*B[2,2])/4
       }
       if(dij > 0) D = rbind(D, c(ped[i,]$ID, ped[j,]$ID, dij))
     }

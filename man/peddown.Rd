@@ -4,12 +4,14 @@
 \alias{peddown}
 \title{Downward pedigree extraction}
 \usage{
-peddown(ped, parents)
+peddown(ped, parents, maxgen = c())
 }
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
 \item{parents}{: Vector of individual ID(s), from which the new pedigree is being extracted.}
+
+\item{maxgen}{: (optional) a positive integer for the maximum number of generations to proceed. If no value is provided, there is no limitation on the maximum number of generations to proceed.}
 }
 \value{
 newped : Extracted pedigree \code{data.frame}
@@ -20,5 +22,6 @@ Extracts pedigree downward for one or a group of individuals to find their desce
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
 peddown(ped, c(1,4))
+peddown(ped, 1, maxgen=1)
 
 }

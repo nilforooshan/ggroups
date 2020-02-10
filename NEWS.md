@@ -15,3 +15,9 @@
 
 * Added function `tabD`.
 * Added function `tabDinv`.
+
+## Version 1.3.0
+
+* Debugged function `tabD`.
+* Removed function `qmat`.
+* Added optional argument `maxgen` to functions `pedup` and `peddown`.

@@ -43,11 +43,10 @@ pruneped = function(ped, pheno, mode) {
       noprogeny = newped$ID[!newped$ID %in% parents]
       noparentnoprogeny = intersect(noparent, noprogeny)
       newped = newped[!newped$ID %in% noparentnoprogeny,]
-      return(newped)
    } else {
       founders = pedup(ped, pheno)
       founders = founders[founders$SIRE==0 & founders$DAM==0,]$ID
       newped = peddown(ped, founders)
-      return(newped)
    }
+   return(newped)
 }

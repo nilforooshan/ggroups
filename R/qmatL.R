@@ -2,11 +2,6 @@
 #'
 #' @description Creates the genetic group contribution matrix for large pedigrees.
 #'
-#' @details
-#' Calculation of the genetic group contribution matrix for large pedigrees requires a lot of memory and time.
-#' This might not be possible on ordinary computers, using the function \code{qmat}.
-#' The function \code{qmatL} takes less RAM and time, making the calculation possible for ordinary computers.
-#'
 #' @param ped2 : The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})
 #'
 #' @return \strong{Q} \code{matrix}

@@ -4,12 +4,14 @@
 \alias{pedup}
 \title{Upward pedigree extraction}
 \usage{
-pedup(ped, progeny)
+pedup(ped, progeny, maxgen = c())
 }
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
 \item{progeny}{: Vector of individual ID(s), from which the new pedigree is being extracted.}
+
+\item{maxgen}{: (optional) a positive integer for the maximum number of generations (continuing from parents of \code{progeny}) to proceed. If no value is provided, there is no limitation on the maximum number of generations to proceed.}
 }
 \value{
 newped : Extracted pedigree \code{data.frame}
@@ -20,5 +22,6 @@ Extracts pedigree upward for one or a group of individuals to find their ascenda
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
 pedup(ped, c(1,4))
+pedup(ped, 6, maxgen=1)
 
 }

@@ -15,11 +15,6 @@ qmatL(ped2)
 \description{
 Creates the genetic group contribution matrix for large pedigrees.
 }
-\details{
-Calculation of the genetic group contribution matrix for large pedigrees requires a lot of memory and time.
-This might not be possible on ordinary computers, using the function \code{qmat}.
-The function \code{qmatL} takes less RAM and time, making the calculation possible for ordinary computers.
-}
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))
 ped2 = gghead(ped)
