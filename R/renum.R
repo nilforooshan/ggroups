@@ -36,6 +36,6 @@ renum = function(ped) {
    newped[is.na(newped)] = 0
    newped = newped[order(newped$ID),]
    xrf$ID = substring(xrf$ID, 2)
-   message(paste("Found", gen, "generations"))
+   message("Found ", gen, " generations")
    return(list("newped"=newped, "xrf"=xrf))
 }

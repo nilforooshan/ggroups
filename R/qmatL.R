@@ -15,13 +15,13 @@
 qmatL = function(ped2) {
    colnames(ped2) = c("ID", "SIRE", "DAM")
    Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
-   message(paste("Found", Ngg, "genetic groups"))
+   message("Found ", Ngg, " genetic groups")
    ggID = ped2[1:Ngg,]$ID
    animID = ped2[(Ngg+1):nrow(ped2),]$ID
    Q = matrix(0, nrow=nrow(ped2)-Ngg, ncol=Ngg, dimnames=list(animID, ggID))
    for(i in ggID)
    {
-      message(paste("Processing genetic group", i))
+      message("Processing genetic group ", i)
       descendants = peddown(ped2, i)
       A.row1 = Arow1(descendants)[-1,]
       for(j in 1:nrow(A.row1)) Q[as.character(A.row1[j,]$ID), as.character(i)] = A.row1[j,]$rg

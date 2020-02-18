@@ -17,13 +17,13 @@
 #' @export
 rg = function(ped, id1, id2) {
    colnames(ped) = c("ID","SIRE","DAM")
-   if(all(ped[c(id1, id2), 2:3]==0))
+   if(all(ped[ped$ID %in% c(id1, id2), 2:3]==0))
    {
       rG = 0
-      if(identical(id1, id2)) rG = 1
+      if(id1==id2) rG = 1
    } else {
       A = buildA(pruneped(ped, c(id1, id2), mode="strict"))
-      rG = A[which(rownames(A)==id1), which(rownames(A)==id2)]
+      rG = A[which(rownames(A)==id1), which(colnames(A)==id2)]
       if(length(rG)==0) rG = 0
    }
    return(rG)

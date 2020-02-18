@@ -44,7 +44,7 @@ offspring = function(ped, id, pheno) {
    }
    if(length(prgn) > 0)
    {
-      for(i in 1:length(prgn)) message(paste("Generation", i, ":", length(prgn[[i]]), "progeny, of which", length(prgn.ph[[i]]), "recorded"))
+      for(i in 1:length(prgn)) message("Generation ", i, ": ", length(prgn[[i]]), " progeny, of which ", length(prgn.ph[[i]]), " recorded")
    }
    return(list("prgn"=prgn, "prgn.ph"=prgn.ph))
 }

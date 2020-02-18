@@ -21,49 +21,48 @@
 #'
 #' @export
 tabAinv = function(ped, inbr) {
-   colnames(ped) = c("ID", "SIRE", "DAM")
-   if(any(inbr < 0 | inbr > 1)) stop("Inbreeding values should be between 0 and 1.")
-   if(nrow(ped)!=length(inbr)) stop("Number of individuals in the pedigree does not match with the number of inbreeding values.")
-   curr.set = ped[ped$SIRE==0 & ped$DAM==0,]$ID
-   tbAinv = data.frame(ID1=curr.set, ID2=curr.set, ai=1)
-   ped2 = ped[!ped$ID %in% curr.set,]
-   while(nrow(ped2) > 0)
-   {
-      curr.set = ped2[!ped2$SIRE %in% ped2$ID & !ped2$DAM %in% ped2$ID,]
-      for(i in 1:nrow(curr.set))
-      {
-         if(curr.set[i,]$SIRE!=0 & curr.set[i,]$DAM!=0)
-         {
-            Fs = inbr[which(unique(sort(ped$ID))==curr.set[i,]$SIRE)]
-            Fd = inbr[which(unique(sort(ped$ID))==curr.set[i,]$DAM) ]
-            x = 1/(2 - Fs - Fd)
-            tbAinv[tbAinv$ID1==curr.set[i,]$SIRE & tbAinv$ID2==curr.set[i,]$SIRE,]$ai =
-            tbAinv[tbAinv$ID1==curr.set[i,]$SIRE & tbAinv$ID2==curr.set[i,]$SIRE,]$ai+x
-            tbAinv[tbAinv$ID1==curr.set[i,]$DAM  & tbAinv$ID2==curr.set[i,]$DAM, ]$ai =
-            tbAinv[tbAinv$ID1==curr.set[i,]$DAM  & tbAinv$ID2==curr.set[i,]$DAM, ]$ai+x
-            tmp = tbAinv[(tbAinv$ID1==curr.set[i,]$SIRE & tbAinv$ID2==curr.set[i,]$DAM ) |
-                         (tbAinv$ID1==curr.set[i,]$DAM  & tbAinv$ID2==curr.set[i,]$SIRE),]
-            if(nrow(tmp) > 0)
-            {
-               tbAinv[tbAinv$ID1==tmp$ID1 & tbAinv$ID2==tmp$ID2,]$ai =
-               tbAinv[tbAinv$ID1==tmp$ID1 & tbAinv$ID2==tmp$ID2,]$ai+x
-            } else {
-               tbAinv = rbind(tbAinv, c(curr.set[i,]$SIRE, curr.set[i,]$DAM, x))
-            }
-            tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$SIRE, -2*x))
-            tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$DAM,  -2*x))
-            tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$ID,    4*x))
-         } else {
-            Fp = inbr[which(unique(sort(ped$ID))==curr.set[i,2:3][curr.set[i,2:3]!=0])]
-            x = 1/(3 - Fp)
-            tbAinv[tbAinv$ID1==curr.set[i,2:3][curr.set[i,2:3]!=0] & tbAinv$ID2==curr.set[i,2:3][curr.set[i,2:3]!=0],]$ai =
-            tbAinv[tbAinv$ID1==curr.set[i,2:3][curr.set[i,2:3]!=0] & tbAinv$ID2==curr.set[i,2:3][curr.set[i,2:3]!=0],]$ai+x
-            tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,2:3][curr.set[i,2:3]!=0], -2*x))
-            tbAinv = rbind(tbAinv, c(curr.set[i,]$ID, curr.set[i,]$ID, 4*x))
-         }
-      }
-      ped2 = ped2[!ped2$ID %in% curr.set$ID,]
-   }
-   tbAinv = tbAinv[order(tbAinv$ID1, tbAinv$ID2),]
-   return(tbAinv)
+  colnames(ped) = c("ID", "SIRE", "DAM")
+  if(any(inbr < 0 | inbr > 1)) stop("Inbreeding values should be between 0 and 1.")
+  if(nrow(ped)!=length(inbr)) stop("Number of individuals in the pedigree does not match with the number of inbreeding values.")
+  inbr = data.frame(ID=ped$ID, F=inbr)
+  ped = merge(ped, inbr, by.x="SIRE", by.y="ID", all.x=TRUE)
+  ped = merge(ped, inbr, by.x="DAM",  by.y="ID", all.x=TRUE)
+  ped = ped[order(ped$ID),]
+  colnames(ped)[4:5] = c("fs", "fd")
+  ped[is.na(ped)] = 0
+  Ai = data.frame(ID1=ped$ID[1], ID2=ped$ID[1], ai=1)
+  for(i in 2:nrow(ped))
+  {
+    iID = ped$ID[i]
+    si = ped$SIRE[i]
+    di = ped$DAM[i]
+    Fs = ped$fs[i]
+    Fd = ped$fd[i]
+    if(si >0 & di==0) {
+      b = (3 - Fs)/4
+      tmp = data.frame(ID1=c(si,si,iID), ID2=c(si,iID,iID), ai=c(0.25,-0.5,1)/b)
+      Ai = rbind(Ai, tmp)
+    }
+    if(si==0 & di >0) {
+      b = (3 - Fd)/4
+      tmp = data.frame(ID1=c(di,di,iID), ID2=c(di,iID,iID), ai=c(0.25,-0.5,1)/b)
+      Ai = rbind(Ai, tmp)
+    }
+    if(si >0 & di >0) {
+      b = (2 - Fs + Fd)/4
+      tmp = data.frame(ID1=c(si,si,si,di,di,iID),
+                       ID2=c(si,di,iID,di,iID,iID),
+                       ai=c(0.25,0.25,-0.5,0.25,-0.5,1)/b)
+      Ai = rbind(Ai, tmp)
+    }
+    if(si==0 & di==0) {
+      Ai = rbind(Ai, c(iID, iID, 1))
+    }
+    if((i %% 1000)==0) message(i, " of ", nrow(ped))
+  }
+  if(i > 1000) message(i, " of ", nrow(ped))
+  Ai = transform(Ai, ID1=pmin(Ai$ID1, Ai$ID2), ID2=pmax(Ai$ID1, Ai$ID2))
+  Ai = aggregate(Ai$ai, by=list(Ai$ID1, Ai$ID2), FUN=sum)
+  colnames(Ai) = c("ID1","ID2","ai")
+  return(Ai)
 }

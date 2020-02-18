@@ -25,7 +25,7 @@ qmatXL = function(ped2, ncl) {
       colnames(ped2) = c("ID", "SIRE", "DAM")
       Ngg = nrow(ped2[ped2$SIRE==0 & ped2$DAM==0,])
       if(ncl > Ngg) ncl = Ngg
-      message(paste("Found", Ngg, "genetic groups"))
+      message("Found ", Ngg, " genetic groups")
       ggID = ped2[1:Ngg,]$ID
       animID = ped2[(Ngg+1):nrow(ped2),]$ID
       cl = parallel::makeCluster(ncl)

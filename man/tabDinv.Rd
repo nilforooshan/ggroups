@@ -4,10 +4,12 @@
 \alias{tabDinv}
 \title{Inverse of the dominance relationship matrix \strong{D} in a tabular format}
 \usage{
-tabDinv(ped)
+tabDinv(ped, A)
 }
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
+
+\item{A}{: Relationship matrix \strong{A} in a tabular format created by function \code{tabA}.}
 }
 \value{
 \code{data.frame} of the inverse of the dominance relationship matrix
@@ -17,6 +19,6 @@ Creates the \code{data.frame} of the inverse of the pedigree-based dominance rel
 }
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
-tabDinv(ped)
+tabDinv(ped, tabA(ped))
 
 }

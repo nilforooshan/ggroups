@@ -2,12 +2,14 @@
 % Please edit documentation in R/tabD.R
 \name{tabD}
 \alias{tabD}
-\title{Dominance relationship matrix \strong{D} in a tabular format}
+\title{Dominance relationship matrix \strong{D} in a tabular-sparse format}
 \usage{
-tabD(ped)
+tabD(ped, A)
 }
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
+
+\item{A}{: Relationship matrix \strong{A} in a tabular format created by function \code{tabA}.}
 }
 \value{
 Dominance relationship \code{data.frame}
@@ -17,6 +19,6 @@ Creates the pedigree-based dominance relationship \code{data.frame}.
 }
 \examples{
 ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
-tabD(ped)
+tabD(ped, tabA(ped))
 
 }

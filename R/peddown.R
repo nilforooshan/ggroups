@@ -21,14 +21,13 @@ peddown = function(ped, parents, maxgen=c()) {
    if(length(maxgen)==1) {
      if(maxgen!=round(maxgen) | maxgen<1) stop("Invalid maxgen")
    }
+   if(length(maxgen)==0) maxgen = nrow(ped)
    colnames(ped) = c("ID","SIRE","DAM")
    oldped = data.frame()
    newped = data.frame(ID=parents, SIRE=0, DAM=0)
    curr.parents = parents
    iter = 0
-   maxgen2 = maxgen
-   if(length(maxgen)==0) maxgen2 = 1
-   while(nrow(oldped) < nrow(newped) & iter < maxgen2)
+   while(nrow(oldped) < nrow(newped) & iter < maxgen)
    {
       oldped = newped
       tmp = ped[ped$SIRE %in% curr.parents | ped$DAM %in% curr.parents,]
@@ -43,7 +42,7 @@ peddown = function(ped, parents, maxgen=c()) {
          }
       }
       curr.parents = tmp$ID
-      if(length(maxgen)==1) iter = iter + 1
+      iter = iter + 1
    }
    newped[!newped$SIRE %in% newped$ID,]$SIRE = 0
    newped[!newped$DAM  %in% newped$ID,]$DAM  = 0

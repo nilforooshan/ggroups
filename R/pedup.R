@@ -21,22 +21,20 @@ pedup = function(ped, progeny, maxgen=c()) {
    if(length(maxgen)==1) {
       if(maxgen!=round(maxgen) | maxgen<1) stop("Invalid maxgen")
    }
+   if(length(maxgen)==0) maxgen = nrow(ped)
    colnames(ped) = c("ID","SIRE","DAM")
    parents = progeny
    curr.parents = c(unique(ped[ped$ID %in% progeny,]$SIRE), unique(ped[ped$ID %in% progeny,]$DAM))
    curr.parents = curr.parents[curr.parents!=0]
    iter = 0
-   maxgen2 = maxgen
-   if(length(maxgen)==0) maxgen2 = 1
-   while(length(curr.parents) > 0 & iter < maxgen2)
+   while(length(curr.parents) > 0 & iter < maxgen)
    {
       parents = unique(c(parents, curr.parents))
       progeny = curr.parents
       curr.parents = c(unique(ped[ped$ID %in% progeny,]$SIRE), unique(ped[ped$ID %in% progeny,]$DAM))
       curr.parents = curr.parents[curr.parents!=0]
-      if(length(maxgen)==1) iter = iter + 1
+      iter = iter + 1
    }
-   parents = sort(parents)
    newped = ped[ped$ID %in% parents,]
    parents = c(unique(newped$SIRE), unique(newped$DAM))
    parents = parents[parents > 0]

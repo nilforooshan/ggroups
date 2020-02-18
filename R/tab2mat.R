@@ -15,9 +15,9 @@ tab2mat = function(tab) {
    colnames(tab) = c("ID1", "ID2", "val")
    theset = unique(sort(tab$ID1))
    mat = matrix(0, nrow=length(theset), ncol=length(theset))
-   rownames(mat) = paste0('r', theset)
-   colnames(mat) = paste0('c', theset)
-   for(i in theset) mat[paste0('r', i), paste0('c', tab[tab$ID1==i,]$ID2)] = tab[tab$ID1==i,]$val
+   rownames(mat) = colnames(mat) = paste0('x', theset)
+   for(i in theset) mat[paste0('x', i), paste0('x', tab[tab$ID1==i,]$ID2)] = tab[tab$ID1==i,]$val
+   rownames(mat) = colnames(mat) = theset
    mat = mat + t(mat)
    diag(mat) = diag(mat)/2
    return(mat)
