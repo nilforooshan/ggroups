@@ -22,8 +22,13 @@
 * Removed function `qmat`.
 * Added optional argument `maxgen` to functions `pedup` and `peddown`.
 
-## Version 2.0.0
+## Version 2.0.1
 
+* Debugged `tabD` function.
 * Brought back function `qmat`.
 * Added function `buildD`.
 * Major computational optimisations (runtime speed) for several functions.
+
+## Version 2.0.2
+
+* Added function `smgsped`.
