@@ -49,7 +49,7 @@ tabAinv = function(ped, inbr) {
       Ai = rbind(Ai, tmp)
     }
     if(si >0 & di >0) {
-      b = (2 - Fs + Fd)/4
+      b = (2 - Fs - Fd)/4
       tmp = data.frame(ID1=c(si,si,si,di,di,iID),
                        ID2=c(si,di,iID,di,iID,iID),
                        ai=c(0.25,0.25,-0.5,0.25,-0.5,1)/b)

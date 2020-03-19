@@ -32,3 +32,7 @@
 ## Version 2.0.2
 
 * Added function `smgsped`.
+
+## Version 2.0.3
+
+* Debugged `tabAinv` for the bug introduced in v2.0.2.
