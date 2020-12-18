@@ -9,7 +9,7 @@ tabD(ped, A)
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
-\item{A}{: Relationship matrix \strong{A} in a tabular format created by function \code{tabA}.}
+\item{A}{: Relationship matrix \strong{A} in a tabular format created by function \code{\link{tabA}}.}
 }
 \value{
 Dominance relationship \code{data.frame}

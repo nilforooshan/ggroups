@@ -28,7 +28,7 @@ devtools::install_github('nilforooshan/ggroups')
 
 ## Description
 
-This package contains pedigree processing and analyzing functions, including functions for checking, extraction and renumbering the pedigree, making the additive and dominance pedigree relationship matrices and their inverses, in matrix and tabular formats, as well as functions related to genetic groups.
+This package contains pedigree processing and analyzing functions, including functions for checking, extraction and renumbering the pedigree, making the additive and dominance pedigree relationship matrices and their inverses, in matrix and tabular formats, calculating inbreeding coefficients ([Meuwissen & Luo, 1992](https://doi.org/10.1186/1297-9686-24-4-305)), as well as functions related to genetic groups.
 
 ## Details
 

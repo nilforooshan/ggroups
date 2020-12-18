@@ -8,7 +8,7 @@
 #'
 #' @param id2 : Numeric ID of an individual
 #'
-#' @return rG : Genetic relationship coefficient between the two individuals
+#' @return Genetic relationship coefficient between the two individuals
 #'
 #' @examples
 #' ped = data.frame(ID=1:7, SIRE=c(0,0,1,1,3,1,5), DAM=c(0,0,0,2,4,4,6))

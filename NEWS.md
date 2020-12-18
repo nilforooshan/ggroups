@@ -36,3 +36,8 @@
 ## Version 2.0.3
 
 * Debugged `tabAinv` for the bug introduced in v2.0.2.
+
+## Version 2.1.0
+
+* Added function `inbreed` based on [Meuwissen & Luo (1992)](https://doi.org/10.1186/1297-9686-24-4-305).
+* Function `inb` makes uses of function `inbreed`.

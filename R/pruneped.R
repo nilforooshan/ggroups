@@ -12,7 +12,7 @@
 #'
 #' @param mode : \code{strict} or \code{loose}
 #'
-#' @return newped : Pruned pedigree \code{data.frame}
+#' @return Pruned pedigree \code{data.frame}
 #'
 #' @examples
 #' ped = data.frame(ID=1:7, SIRE=c(0,0,1,3,1,4,0), DAM=c(0,0,2,2,2,5,0))

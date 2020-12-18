@@ -14,7 +14,7 @@ rg(ped, id1, id2)
 \item{id2}{: Numeric ID of an individual}
 }
 \value{
-rG : Genetic relationship coefficient between the two individuals
+Genetic relationship coefficient between the two individuals
 }
 \description{
 Calculates genetic relationship coefficient between two individuals.

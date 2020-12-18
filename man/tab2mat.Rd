@@ -10,7 +10,7 @@ tab2mat(tab)
 \item{tab}{: \code{data.frame} with 2 integer (IDs) and 1 numeric (values) columns.}
 }
 \value{
-mat : \code{matrix}
+Converted \code{data.frame} to \code{matrix}
 }
 \description{
 Converts tabular data to matrix data.

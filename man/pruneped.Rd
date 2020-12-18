@@ -14,7 +14,7 @@ pruneped(ped, pheno, mode)
 \item{mode}{: \code{strict} or \code{loose}}
 }
 \value{
-newped : Pruned pedigree \code{data.frame}
+Pruned pedigree \code{data.frame}
 }
 \description{
 Pruning pedigree in two different modes (strict, loose)

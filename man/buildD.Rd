@@ -9,7 +9,7 @@ buildD(ped, A)
 \arguments{
 \item{ped}{: \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.}
 
-\item{A}{: Relationship matrix \strong{A} created by function \code{buildA}.}
+\item{A}{: Relationship matrix \strong{A} created by function \code{\link{buildA}}.}
 }
 \value{
 Relationship \code{matrix} \strong{D}

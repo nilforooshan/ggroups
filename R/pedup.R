@@ -8,7 +8,7 @@
 #'
 #' @param maxgen : (optional) a positive integer for the maximum number of generations (continuing from parents of \code{progeny}) to proceed. If no value is provided, there is no limitation on the maximum number of generations to proceed.
 #'
-#' @return newped : Extracted pedigree \code{data.frame}
+#' @return Extracted pedigree \code{data.frame}
 #'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))

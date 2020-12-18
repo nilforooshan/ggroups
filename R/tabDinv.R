@@ -4,7 +4,7 @@
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param A : Relationship matrix \strong{A} in a tabular format created by function \code{tabA}.
+#' @param A : Relationship matrix \strong{A} in a tabular format created by function \code{\link{tabA}}.
 #'
 #' @return \code{data.frame} of the inverse of the dominance relationship matrix
 #'

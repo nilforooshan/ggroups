@@ -5,12 +5,14 @@
 \alias{ggroups-package}
 \title{Pedigree and genetic groups}
 \description{
-This package contains pedigree processing and analyzing functions, including functions for checking and renumbering the pedigree, making the additive and dominance pedigree relationship matrices and their inverses, in matrix and tabular formats, as well as functions related to genetic groups.
+This package contains pedigree processing and analyzing functions, including functions for checking and renumbering the pedigree, making the additive and dominance pedigree relationship matrices and their inverses, in matrix and tabular formats, calculating inbreeding coefficients, as well as functions related to genetic groups.
 }
 \details{
-First, it is recommended to check the pedigree \code{data.frame} with the \code{pedcheck} function. Pedigree relationship matrix and its inverse are fundamentals in the conventional and modern animal breeding. The concept of genetic groups stems from the fact that not all the unknown parents are of the same genetic level. The genetic group contribution matrix (\strong{Q}) is required to weight and add genetic group effects (\ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}}) to the genetic merit of animals (\ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}}), which is equal to \strong{Q}\ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}} + \ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}} (Quaas, 1988). Calculating \strong{Q} is computationally challenging, and for large pedigree, large RAM and long computational time is required. Therefore, the functions \code{qmatL} and its parallel version, \code{qmatXL} are introduced. Overlap between sire and dam genetic groups is supported.
+First, it is recommended to check the pedigree \code{data.frame} with the \code{\link{pedcheck}} function. Pedigree relationship matrix and its inverse are fundamentals in the conventional and modern animal breeding. The concept of genetic groups stems from the fact that not all the unknown parents are of the same genetic level. The genetic group contribution matrix (\strong{Q}) is required to weight and add genetic group effects (\ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}}) to the genetic merit of animals (\ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}}), which is equal to \strong{Q}\ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}} + \ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}} (Quaas, 1988). Calculating \strong{Q} is computationally challenging, and for large pedigree, large RAM and long computational time is required. Therefore, the functions \code{qmatL} and its parallel version, \code{qmatXL} are introduced. Overlap between sire and dam genetic groups is supported.
 }
 \references{
+Meuwissen, T. and Luo, Z. 1992. Computing Inbreeding Coefficients in Large Populations. Genet. Sel. Evol., 24:305. <doi:10.1186/1297-9686-24-4-305>
+
 Mrode, R. A. 2005. Linear Models for the Prediction of Animal Breeding Values, 2nd ed. Cambridge, MA: CABI Publishing.
 
 Quaas, R. L. 1988. Additive Genetic Model with Groups and Relationships. J. Dairy Sci., 71:1338-1345. <doi:10.3168.jds.S0022-0302(88)79691-5>

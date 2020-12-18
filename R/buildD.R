@@ -4,7 +4,7 @@
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
-#' @param A : Relationship matrix \strong{A} created by function \code{buildA}.
+#' @param A : Relationship matrix \strong{A} created by function \code{\link{buildA}}.
 #'
 #' @return Relationship \code{matrix} \strong{D}
 #'

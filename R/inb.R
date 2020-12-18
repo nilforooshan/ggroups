@@ -1,4 +1,4 @@
-#' @title Inbreeding coefficient
+#' @title Individual's inbreeding coefficient
 #'
 #' @description Calculates inbreeding coefficient for an individual.
 #'
@@ -6,7 +6,7 @@
 #'
 #' @param id : Numeric ID of an individual
 #'
-#' @return Inb : Inbreeding coefficient of the individual
+#' @return Inbreeding coefficient of the individual
 #'
 #' @examples
 #' ped = data.frame(ID=1:7, SIRE=c(0,0,1,1,3,1,5), DAM=c(0,0,0,2,4,4,6))
@@ -19,7 +19,7 @@ inb = function(ped, id) {
    dam  = ped[ped$ID==id,]$DAM
    if(sire > 0 & dam > 0)
    {
-      Inb = rg(ped, sire, dam)/2
+      Inb = inbreed(pedup(ped, c(sire,dam)))
    } else {
       Inb = 0
    }

@@ -12,7 +12,7 @@ smgsped(ped, pheno)
 \item{pheno}{: Vector of phenotyped individuals}
 }
 \value{
-newped : S-MGS pedigree \code{data.frame}
+S-MGS pedigree \code{data.frame}
 }
 \description{
 Extract sire-maternal grandsire (S-MGS) pedigree from a sire-dam pedigree. Sire and MGS information is extracted for sires of phenotyped individuals.

@@ -14,7 +14,7 @@ pedup(ped, progeny, maxgen = c())
 \item{maxgen}{: (optional) a positive integer for the maximum number of generations (continuing from parents of \code{progeny}) to proceed. If no value is provided, there is no limitation on the maximum number of generations to proceed.}
 }
 \value{
-newped : Extracted pedigree \code{data.frame}
+Extracted pedigree \code{data.frame}
 }
 \description{
 Extracts pedigree upward for one or a group of individuals to find their ascendants
