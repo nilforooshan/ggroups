@@ -1,6 +1,6 @@
 #' @title Descendants of an individual per generation
 #'
-#' @description Counts and collects progeny and phenotyped progeny of an individual in successive generations.
+#' @description Counts and collects progeny and phenotyped progeny of an individual in successive generations. In pedigrees with generation overlap, animals are reported in the 1st generation that they appear in, rather than in multiple generations.
 #'
 #' @param ped : \code{data.frame} with columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
@@ -26,25 +26,39 @@
 #'
 #' @export
 offspring = function(ped, id, pheno) {
-   if(length(id)!=1) stop("The 2nd parameter (id) should be of length 1.")
-   colnames(ped) = c("ID","SIRE","DAM")
-   prgn = prgn.ph = list()
-   parent = id
-   gen = 0
-   while(length(parent > 0))
-   {
-      progenies = ped[ped$SIRE %in% parent | ped$DAM %in% parent,]$ID
-      if(length(progenies) > 0)
-      {
-         gen = gen + 1
-         prgn[[gen]] = progenies
-         prgn.ph[[gen]] = progenies[progenies %in% pheno]
-      }
-      parent = progenies
-   }
-   if(length(prgn) > 0)
-   {
-      for(i in 1:length(prgn)) message("Generation ", i, ": ", length(prgn[[i]]), " progeny, of which ", length(prgn.ph[[i]]), " recorded")
-   }
-   return(list("prgn"=prgn, "prgn.ph"=prgn.ph))
+    if(length(id)!=1) stop("The 2nd parameter (id) should be of length 1.")
+    colnames(ped) = c("ID","SIRE","DAM")
+    # Extract generations consecutively
+    prgn = list()
+    parents = id
+    gen = 0
+    while(length(parents) > 0)
+    {
+        progenies = ped[ped$SIRE %in% parents | ped$DAM %in% parents,]$ID
+        if(length(progenies) > 0) {
+            gen = gen + 1
+            prgn[[gen]] = progenies
+        }
+        parents <- progenies
+    }
+    # Delete animals in the ith generation if they appear in the previous generations
+    if(gen > 1) {
+        for(i in 2:gen) for(j in (2:i)-1) prgn[[i]] = prgn[[i]][!prgn[[i]] %in% prgn[[j]]]
+    }
+    # If there are empty arrays at the end, delete them.
+    i = gen
+    while(length(prgn[[i]])==0)
+    {
+        prgn = prgn[-i]
+        i = i - 1
+    }
+    gen = length(prgn)
+    # Create the list of phenotyped animals and report
+    prgn.ph <- prgn
+    for(i in 1:gen)
+    {
+        prgn.ph[[i]] = prgn.ph[[i]][prgn.ph[[i]] %in% pheno]
+        message("Generation ", i, ": ", length(prgn[[i]]), " progeny, of which ", length(prgn.ph[[i]]), " recorded")
+    }
+    return(list("prgn"=prgn, "prgn.ph"=prgn.ph))
 }

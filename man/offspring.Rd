@@ -19,7 +19,7 @@ prgn : \code{list} of progeny per generation.
 prgn.ph : \code{list} of phenotyped progeny per generation.
 }
 \description{
-Counts and collects progeny and phenotyped progeny of an individual in successive generations.
+Counts and collects progeny and phenotyped progeny of an individual in successive generations. In pedigrees with generation overlap, animals are reported in the 1st generation that they appear in, rather than in multiple generations.
 }
 \examples{
 ped = data.frame(V1 = 1:19,

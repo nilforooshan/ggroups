@@ -41,3 +41,7 @@
 
 * Added function `inbreed` based on [Meuwissen & Luo (1992)](https://doi.org/10.1186/1297-9686-24-4-305).
 * Function `inb` makes uses of function `inbreed`.
+
+## Version 2.1.1
+
+* Debugged `offspring` function so that in pedigrees with generation overlap animals appear in one generation rather than multiple generations.
