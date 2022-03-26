@@ -45,3 +45,7 @@
 ## Version 2.1.1
 
 * Debugged `offspring` function so that in pedigrees with generation overlap animals appear in one generation rather than multiple generations.
+
+## Version 2.1.2
+
+* Improved documentation by providing links to functions.

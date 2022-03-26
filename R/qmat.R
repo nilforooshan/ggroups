@@ -2,7 +2,7 @@
 #'
 #' @description Creates the genetic group contribution matrix.
 #'
-#' @param ped2 : The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})
+#' @param ped2 : The output \code{data.frame} from \code{\link{gghead}} (for more details: \code{?\link{gghead}})
 #'
 #' @return \strong{Q} \code{matrix}
 #'

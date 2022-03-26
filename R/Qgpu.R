@@ -2,7 +2,7 @@
 #'
 #' @description Adds genetic group contributions to the genetic merit of individuals.
 #'
-#' @param Q : The output \code{matrix} from \code{qmatL} (for more details: \code{?qmatL})
+#' @param Q : The output \code{matrix} from \code{\link{qmatL}} (for more details: \code{?\link{qmatL}})
 #'
 #' @param sol : \code{data.frame} with 2 numeric columns corresponding to ID, EBV ([\ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}}, \ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}}]), where \ifelse{latex}{\out{$\hat{\bf g}$}}{\ifelse{html}{\out{<b>&gcirc;</b>}}{ghat}} and \ifelse{latex}{\out{$\hat{\bf u}$}}{\ifelse{html}{\out{<b>&ucirc;</b>}}{uhat}} are the genetic group and genetic merit solutions, respectively. The order of solutions must be the order of columns and the order of rows in matrix \strong{Q}.
 #'

@@ -7,7 +7,7 @@
 qmat(ped2)
 }
 \arguments{
-\item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
+\item{ped2}{: The output \code{data.frame} from \code{\link{gghead}} (for more details: \code{?\link{gghead}})}
 }
 \value{
 \strong{Q} \code{matrix}

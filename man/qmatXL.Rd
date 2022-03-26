@@ -7,7 +7,7 @@
 qmatXL(ped2, ncl)
 }
 \arguments{
-\item{ped2}{: The output \code{data.frame} from \code{gghead} (for more details: \code{?gghead})}
+\item{ped2}{: The output \code{data.frame} from \code{\link{gghead}} (for more details: \code{?\link{gghead}})}
 
 \item{ncl}{: User defined number of nodes; if the number of user defined nodes is greater than the number of genetic groups, the number genetic groups is considered as the number of nodes.}
 }
@@ -18,7 +18,7 @@ qmatXL(ped2, ncl)
 Creates the genetic group contribution matrix for large pedigrees, with parallel processing.
 }
 \details{
-This function is the parallel version of \code{qmatL}. It requires \code{foreach} and \code{doParallel} packages.
+This function is the parallel version of \code{\link{qmatL}}. It requires \code{foreach} and \code{doParallel} packages.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

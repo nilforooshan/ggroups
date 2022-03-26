@@ -14,8 +14,8 @@
 inbreed  <- function(ped) {
     message("Estimating inbreeding coefficients based on Meuwissen and Luo (1992)")
     N = nrow(ped)
-    if(ped[1,1]!=1) stop("ERROR: The first ID is not equal to 1.")
-    if(any(ped[,1] - c(0,ped[-N,1])!=1)) stop("ERROR: IDs are not sequential.")
+    if(ped[1,1]!=1) stop("The first ID is not equal to 1.")
+    if(any(ped[,1] - c(0,ped[-N,1])!=1)) stop("IDs are not sequential.")
     F = L = POINT = rep(0, N)
     D = rep(1, N)
     ped$P1 = apply(ped[,2:3], 1, FUN=max)
