@@ -1,4 +1,4 @@
-[![cran-version](https://www.r-pkg.org/badges/version/ggroups?color=green)](https://cran.r-project.org/package=ggroups)
+[![cran-version](https://www.r-pkg.org/badges/version/ggroups)](https://cran.r-project.org/package=ggroups)
 [![cran-downloads-total](https://cranlogs.r-pkg.org/badges/grand-total/ggroups?color=green)](https://cran.r-project.org/package=ggroups)
 [![cran-downloads-month](https://cranlogs.r-pkg.org/badges/last-month/ggroups?color=green)](https://cran.r-project.org/package=ggroups)
 [![cran-downloads-week](https://cranlogs.r-pkg.org/badges/last-week/ggroups?color=green)](https://cran.r-project.org/package=ggroups)
