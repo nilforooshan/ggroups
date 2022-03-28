@@ -3,7 +3,7 @@
 #' @description Creates the genetic group contribution matrix for large pedigrees, with parallel processing.
 #'
 #' @details
-#' This function is the parallel version of \code{\link{qmatL}}. It requires \code{foreach} and \code{doParallel} packages.
+#' This function is the parallel version of \code{\link{qmatL}}. It requires \pkg{foreach} and \pkg{doParallel} packages.
 #'
 #' @param ped2 : The output \code{data.frame} from \code{\link{gghead}} (for more details: \code{?\link{gghead}})
 #'
