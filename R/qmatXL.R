@@ -16,9 +16,9 @@
 #' ped2 = gghead(ped)
 #' qmatXL(ped2, 2)
 #'
-if(getRversion() >= "2.15.1")  utils::globalVariables("i")
 #' @export
 qmatXL = function(ped2, ncl) {
+   i = NULL
    if(ncl < 2) stop("Use qmatL() for ncl < 2")
    if(requireNamespace(c("doParallel", "foreach"), quietly=TRUE))
    {

@@ -18,7 +18,7 @@ qmatXL(ped2, ncl)
 Creates the genetic group contribution matrix for large pedigrees, with parallel processing.
 }
 \details{
-This function is the parallel version of \code{\link{qmatL}}. It requires \code{foreach} and \code{doParallel} packages.
+This function is the parallel version of \code{\link{qmatL}}. It requires \pkg{foreach} and \pkg{doParallel} packages.
 }
 \examples{
 ped = data.frame(ID=c(3,4,6,5), SIRE=c(1,3,4,1), DAM=c(2,2,5,2))

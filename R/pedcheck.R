@@ -4,6 +4,8 @@
 #'
 #' @param ped : \code{data.frame} with integer columns corresponding to ID, SIRE, DAM. Missing value is 0.
 #'
+#' @importFrom stats na.omit
+#'
 #' @examples
 #' set.seed(127)
 #' ped = data.frame(ID=c(1:50,NA,0,1:3),

@@ -8,6 +8,8 @@
 #'
 #' @return \code{data.frame} of the inverse of the genetic relationship matrix
 #'
+#' @importFrom stats aggregate
+#'
 #' @examples
 #' ped = data.frame(ID=1:6, SIRE=c(0,0,1,3,1,4), DAM=c(0,0,2,2,2,5))
 #' inbr = c(0, 0, 0, 0.25, 0, 0.25)
